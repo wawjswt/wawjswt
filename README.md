@@ -45,7 +45,7 @@
 
 ---
 
-### 📊 GitHub Stats
+### 🖼️ Recent Works
 
 <div align="center">
   <!-- 修复版：移除了不稳定的透明参数，重新排列 -->
@@ -53,6 +53,10 @@
   
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=dark&hide_border=true" height="180" alt="languages graph" />
 </div>
+
+---
+
+### 📊 GitHub Stats
 
 <div align="center">
   <!-- Streak 能够正常显示，保持不变 -->
