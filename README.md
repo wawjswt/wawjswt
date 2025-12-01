@@ -79,7 +79,7 @@
             <ul>
                 <li>Detection of fire or car。</li>
                 <li>PyTorch, YOLOv5。</li>
-                <li><a href="https://github.com/ultralytics/yolov5">查看项目代码 &raquo;</a></li>
+                <li><a href="https://github.com/ultralytics/yolov5">Yolov5 &raquo;</a></li>
             </ul>
         </td>
     </tr>
@@ -110,8 +110,8 @@
     <tr>
         <td colspan="2" align="left">
             <ul>
-                <li>重建效果展示，PSNR 提升 1.5dB。</li>
-                <li><a href="https://github.com/wawjswt/你的项目链接2">查看项目代码 &raquo;</a></li>
+                <li>重建效果展示</li>
+                <li><a href="https://github.com/graphdeco-inria/gaussian-splatting">Gaussina Splatting &raquo;</a></li>
             </ul>
         </td>
     </tr>
@@ -130,7 +130,7 @@
         <br/><br/>
         <p align="left">
            这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。<br/>
-           <a href="https://github.com/wawjswt/你的项目链接3">View Project &raquo;</a>
+           <a href="https://github.com/facebookresearch/vggt">VGGT &raquo;</a>
         </p>
       </td>
     </tr>
