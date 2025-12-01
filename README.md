@@ -77,8 +77,9 @@
     <tr>
         <td colspan="2" align="left">
             <ul>
-                <li>实现功能：车辆识别与火焰检测。</li>
-                <li>技术栈：PyTorch, YOLOv8。</li>
+                <li>Detection of fire or car。</li>
+                <li>PyTorch, YOLOv5。</li>
+                <li><a href="https://github.com/ultralytics/yolov5">查看项目代码 &raquo;</a></li>
             </ul>
         </td>
     </tr>
