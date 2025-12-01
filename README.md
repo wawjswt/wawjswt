@@ -48,15 +48,14 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <!-- 左边：综合数据 -->
-  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" height="180" alt="stats graph" />
+  <!-- 修复版：移除了不稳定的透明参数，重新排列 -->
+  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true" height="180" alt="stats graph" />
   
-  <!-- 右边：常用语言 -->
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" height="180" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" height="180" alt="languages graph" />
 </div>
 
 <div align="center">
-  <!-- 连击数据 (Streak) -->
+  <!-- Streak 能够正常显示，保持不变 -->
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=tokyonight&hide_border=true&background=00000000" alt="streak graph" />
 </div>
 
