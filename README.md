@@ -45,65 +45,91 @@
 
 ---
 
----
 
-### 🚀 Recent Works | 近期成果
-
-### 🚀 Recent Works | 近期成果
+### 🚀 Recent Works
 
 <div align="center">
   <table width="100%">
-    <!-- 第一行：两个项目并排 -->
-    <tr>
-      <!-- ================= 项目 1: Object Detect (2张图) ================= -->
-      <td width="50%" align="center" valign="top">
-        <h3>🤖 Object Detect</h3>
-        <p>基于 YOLO 系列的目标检测与识别</p>
-        <!-- 图片区域：垂直堆叠，宽度设为100%以适应容器 -->
-        <a href="https://github.com/wawjswt/你的项目链接1">
-            <img src="works/yolo-car.jpg" width="100%" style="border-radius: 8px; margin-bottom: 5px;" alt="car detection"/>
-        </a>
-        <br/>
-        <!-- 两张图之间加一点间距 -->
-        <a href="https://github.com/wawjswt/你的项目链接1">
-            <img src="works/yolo-fire.jpg" width="100%" style="border-radius: 8px;" alt="fire detection"/>
-        </a>
-        <br/><br/>
-        <div align="left">
-            这里写关于 Object Detect 的简短描述，比如使用了什么数据集，达到了多少 FPS 等。
-        </div>
-      </td>
-      <!-- ================= 项目 2: Gaussian Splatting (2张图) ================= -->
-      <td width="50%" align="center" valign="top">
-        <h3>✨ Gaussian Splatting</h3>
-        <p>3D 场景重建与渲染</p>
-        <!-- ⚠️ 请确保你的 works 文件夹里有这两张图，名字要对应修改 -->
-        <a href="https://github.com/wawjswt/你的项目链接2">
-            <img src="works/dog.png" width="100%" style="border-radius: 8px; margin-bottom: 5px;" alt="gs demo 1"/>
-        </a>
-        <br/>
-        <a href="https://github.com/wawjswt/你的项目链接2">
-            <img src="works/witcher.png" width="100%" style="border-radius: 8px;" alt="gs demo 2"/>
-        </a>
-        <br/><br/>
-        <div align="left">
-            这里写关于 3D 高斯泼溅的描述，比如渲染速度、PSNR 指标等。
-        </div>
-      </td>
-    </tr>
-    <!-- 第二行：项目 3 独占一行 (1张图) -->
+    <!-- ==============================================================
+         项目 1: Object Detect (标题占一行，下面放两列图片)
+    =================================================================== -->
     <tr>
       <td colspan="2" align="center">
-        <br/> <!-- 行与行之间的间距 -->
+        <h3>🤖 Object Detect</h3>
+        <p>基于 YOLO 系列的目标检测与识别</p>
+      </td>
+    </tr>
+    <tr>
+      <!-- 左边的图：Car -->
+      <td width="50%" align="center">
+        <a href="https://github.com/wawjswt/你的项目链接1">
+          <img src="works/yolo-car.jpg" width="100%" style="border-radius: 8px;" alt="car detection"/>
+        </a>
+      </td>
+      <!-- 右边的图：Fire -->
+      <td width="50%" align="center">
+        <a href="https://github.com/wawjswt/你的项目链接1">
+          <img src="works/yolo-fire.jpg" width="100%" style="border-radius: 8px;" alt="fire detection"/>
+        </a>
+      </td>
+    </tr>
+    <!-- 描述文字行 (可选，如果不需要可以删掉这行) -->
+    <tr>
+        <td colspan="2" align="left">
+            <ul>
+                <li>实现功能：车辆识别与火焰检测。</li>
+                <li>技术栈：PyTorch, YOLOv8。</li>
+            </ul>
+        </td>
+    </tr>
+    <!-- ==============================================================
+         项目 2: Gaussian Splatting (标题占一行，下面放两列图片)
+    =================================================================== -->
+    <tr>
+      <td colspan="2" align="center">
+        <br/> <!-- 增加一点间距 -->
+        <h3>✨ Gaussian Splatting</h3>
+        <p>3D 场景重建与渲染</p>
+      </td>
+    </tr>
+    <tr>
+      <!-- 左边的图：Dog -->
+      <td width="50%" align="center">
+        <a href="https://github.com/wawjswt/你的项目链接2">
+          <img src="works/dog.png" width="100%" style="border-radius: 8px;" alt="gs dog"/>
+        </a>
+      </td>
+      <!-- 右边的图：Witcher -->
+      <td width="50%" align="center">
+        <a href="https://github.com/wawjswt/你的项目链接2">
+          <img src="works/witcher.png" width="100%" style="border-radius: 8px;" alt="gs witcher"/>
+        </a>
+      </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="left">
+            <ul>
+                <li>重建效果展示，PSNR 提升 1.5dB。</li>
+                <li><a href="https://github.com/wawjswt/你的项目链接2">查看项目代码 &raquo;</a></li>
+            </ul>
+        </td>
+    </tr>
+    <!-- ==============================================================
+         项目 3: VGGT (单张图居中)
+    =================================================================== -->
+    <tr>
+      <td colspan="2" align="center">
+        <br/>
         <h3>🎮 VGGT Project</h3>
         <p>视觉生成与游戏技术探索</p>
-        <!-- 限制最大宽度为 60% 防止单张图在宽屏下太大，你可以调整这个 width="60%" -->
+        <!-- width="70%" 控制图片大小，太大可以改小 -->
         <a href="https://github.com/wawjswt/你的项目链接3">
-            <img src="works/vggt.png" width="60%" style="border-radius: 8px;" alt="vggt demo"/>
+            <img src="works/vggt.png" width="70%" style="border-radius: 8px;" alt="vggt demo"/>
         </a>
         <br/><br/>
-        <p>
-           VGGT 项目的简短介绍。<a href="https://github.com/wawjswt/你的项目链接3">View Project &raquo;</a>
+        <p align="left">
+           这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。<br/>
+           <a href="https://github.com/wawjswt/你的项目链接3">View Project &raquo;</a>
         </p>
       </td>
     </tr>
