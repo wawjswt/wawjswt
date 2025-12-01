@@ -9,13 +9,13 @@
 
 <!-- 社交徽章 & 访问量 -->
 <div align="center">
-  <a href="https://github.com/你的GitHub用户名">
+  <a href="https://github.com/wawjswt">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <a href="https://twitter.com/你的Twitter用户名">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=你的GitHub用户名&label=PROFILE+VIEWS&style=for-the-badge&color=blueviolet" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=wawjswt&label=PROFILE+VIEWS&style=for-the-badge&color=blueviolet" alt="Profile Views" />
 </div>
 
 ---
@@ -50,15 +50,15 @@
 
 <div align="center">
   <!-- 左边：综合数据 -->
-  <img src="https://github-readme-stats.vercel.app/api?username=你的GitHub用户名&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" height="180" alt="stats graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" height="180" alt="stats graph" />
   
   <!-- 右边：常用语言 -->
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=你的GitHub用户名&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" height="180" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" height="180" alt="languages graph" />
 </div>
 
 <div align="center">
   <!-- 连击数据 (Streak) -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=你的GitHub用户名&theme=tokyonight&hide_border=true&background=00000000" alt="streak graph" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=tokyonight&hide_border=true&background=00000000" alt="streak graph" />
 </div>
 
 ---
@@ -67,7 +67,7 @@
 
 <!-- 这个需要配置 GitHub Actions 才能自动更新，下面只是示例图 -->
 <div align="center">
-  <img src="https://github.com/你的GitHub用户名/你的GitHub用户名/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
+  <img src="https://github.com/wawjswt/wawjswt/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
 </div>
 
 ---
@@ -76,7 +76,7 @@
 
 <div align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=你的GitHub用户名&theme=onedark&no-frame=true&no-bg=true&margin-w=4" />
+    <img src="https://github-profile-trophy.vercel.app/?username=wawjswt&theme=onedark&no-frame=true&no-bg=true&margin-w=4" />
   </a>
 </div>
 
