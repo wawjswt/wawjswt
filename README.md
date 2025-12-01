@@ -25,9 +25,11 @@
   <b>Learning:</b> Python, AI Engineering, Latex <br/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="30" /> 
   <b>Focusing:</b> CV, PR, AI, RS <br/>
-  <img src="https://media.giphy.com/media/LpDmM2wSt6kTm/giphy.gif" width="30" /> 
-  <b>Hobby:</b> 🎮 Game, 📷 Photograph, 🎹 Music, ⚽ Soccer <br/>
-  <img src="https://media.giphy.com/media/QssGEmpjCS4Ch23C8X/giphy.gif" width="30" /> 
+    
+  🎮
+  <b>Hobby:</b> 🕹️Game, 📷 Photograph, 🎹 Music, ⚽ Soccer <br/>
+  <!-- 修复：将失效的 GIF 替换为稳定的邮箱 Emoji -->
+  📮
   <b>Contact:</b> Wentian_Shen@whu.edu.cn
 </div>
 
