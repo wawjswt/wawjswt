@@ -161,25 +161,21 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=dark&hide_border=true&background=00000000" alt="streak graph" />
+  <!-- 第一排：左边是核心数据（显示具体数值），右边是连续打卡数据 -->
+  <!-- 使用 height="180" 强制两张卡片高度一致，视觉更整齐 -->
+  
+  <!-- 1. 核心数据卡片：显示 Commits, PRs, Issues, Stars 等具体数值 -->
+  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=dark&count_private=true" height="180" alt="stats graph" />
+  
+  <!-- 2. 连续打卡卡片：显示最长连续天数 -->
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=dark&hide_border=true&background=00000000" height="180" alt="streak graph" />
 </div>
 
----
+<br/>
 
-### 🐍 Contribution Snake
-
+<!-- 第二排：贪吃蛇动画（作为底部装饰） -->
 <div align="center">
   <img src="https://raw.githubusercontent.com/wawjswt/wawjswt/output/github-contribution-grid-snake.svg" alt="snake animation" />
-</div>
-
----
-
-### 🏆 Trophies
-
-<div align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=wawjswt&theme=onedark&no-frame=true&no-bg=true&margin-w=4" alt="trophies" />
-  </a>
 </div>
 
 ---
