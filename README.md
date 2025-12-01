@@ -1,6 +1,7 @@
 <!-- 头部：动态打字机效果 -->
+
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=666&lines=Hi+there!🤗+I'm+SamMantos😘;From WHU🏫;Enchantee🔆" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=435&lines=Hi+there!+I'm+SamMantos;From WHU;Enchante!" alt="Typing SVG" />
 </div>
 
 <div align="center">
