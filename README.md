@@ -10,9 +10,8 @@
 <!-- 社交徽章 & 访问量 -->
 <div align="center">
   <a href="https://github.com/wawjswt">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge"/>
   </a>
-  <!-- 这里的 Twitter 用户名我不确定，暂时保留你的设置或删掉 -->
   <img src="https://komarev.com/ghpvc/?username=wawjswt&label=PROFILE+VIEWS&style=for-the-badge&color=blueviolet" alt="Profile Views" />
 </div>
 
@@ -21,16 +20,15 @@
 ### 👨‍💻 About Me
 
 <div align="center">
-  <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30" /> 
+  <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30" alt="learning" /> 
   <b>Learning:</b> Python, AI Engineering, Latex <br/>
-  <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="30" /> 
+  
+  <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="30" alt="focusing" /> 
   <b>Focusing:</b> CV, PR, AI, RS <br/>
     
-  🎮
-  <b>Hobby:</b> 🕹️Game, 📷 Photograph, 🎹 Music, ⚽ Soccer <br/>
-  <!-- 修复：将失效的 GIF 替换为稳定的邮箱 Emoji -->
-  📮
-  <b>Contact:</b> Wentian_Shen@whu.edu.cn
+  🎮 <b>Hobby:</b> 🕹️Game, 📷 Photograph, 🎹 Music, ⚽ Soccer <br/>
+  
+  📮 <b>Contact:</b> Wentian_Shen@whu.edu.cn
 </div>
 
 ---
@@ -39,19 +37,18 @@
 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,anaconda,react,vue,nextjs,nodejs,python,pytorch,tensorflow,git,docker,linux,bash,cpp,vscode,figma&perline=8&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=html,css,js,anaconda,react,vue,nextjs,nodejs,python,pytorch,tensorflow,git,docker,linux,bash,cpp,vscode,figma&perline=8&theme=dark" alt="Skill Icons" />
   </a>
 </div>
 
 ---
-
 
 ### 🚀 Recent Works
 
 <div align="center">
   <table width="100%">
     <!-- ==============================================================
-         项目 1: Object Detect (标题占一行，下面放两列图片)
+         项目 1: Object Detect
     =================================================================== -->
     <tr>
       <td colspan="2" align="center">
@@ -61,31 +58,30 @@
     </tr>
     <tr>
       <!-- 左边的图：Car -->
-      <td width="50%" align="center">
+      <td width="50%" align="center" valign="top">
         <a href="https://github.com/wawjswt/你的项目链接1">
           <img src="works/yolo-car.jpg" width="100%" style="border-radius: 8px;" alt="car detection"/>
         </a>
       </td>
       <!-- 右边的图：Fire -->
-      <td width="50%" align="center">
+      <td width="50%" align="center" valign="top">
         <a href="https://github.com/wawjswt/你的项目链接1">
           <img src="works/yolo-fire.jpg" width="100%" style="border-radius: 8px;" alt="fire detection"/>
         </a>
       </td>
     </tr>
     <tr>
-      <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
+      <!-- GIF 演示 -->
       <td colspan="2" align="center">
         <br/>
         <a href="https://github.com/wawjswt/你的项目链接2">
-          <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
-          <img src="works/drone.gif" width="80%" style="border-radius: 8px;" alt="gs demo gif"/>
+          <img src="works/drone.gif" width="80%" style="border-radius: 8px;" alt="drone demo gif"/>
         </a>
       </td>
     </tr>
-    <!-- 描述文字行 (可选，如果不需要可以删掉这行) -->
+    <!-- 描述文字 -->
     <tr>
-        <td colspan="2" align="center">
+        <td colspan="2" align="left">
             <ul>
                 <li>Detection of fire or car</li>
                 <li>PyTorch, YOLOv5</li>
@@ -93,17 +89,17 @@
             </ul>
         </td>
     </tr>
-<!-- ==============================================================
-         项目 2: Gaussian Splatting (采用 2+1 布局)
+
+    <!-- ==============================================================
+         项目 2: Gaussian Splatting
     =================================================================== -->
     <tr>
       <td colspan="2" align="center">
-        <br/> <!-- 增加一点间距 -->
+        <br/>
         <h3>✨ Gaussian Splatting</h3>
         <p>3D 场景重建与渲染</p>
       </td>
     </tr>
-    <!-- 第一行：放两张静态结果图 -->
     <tr>
       <!-- 左边的图：Dog -->
       <td width="50%" align="center" valign="top">
@@ -118,46 +114,45 @@
         </a>
       </td>
     </tr>
-    <!-- 新增：GIF 演示行 -->
+    <!-- GIF 演示 -->
     <tr>
-      <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
       <td colspan="2" align="center">
         <br/>
         <p><strong>✨ Live Demo ✨</strong></p>
         <a href="https://github.com/wawjswt/你的项目链接2">
-          <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
           <img src="works/demo.gif" width="80%" style="border-radius: 8px;" alt="gs demo gif"/>
         </a>
       </td>
     </tr>
-    <!-- 描述文字行 -->
+    <!-- 描述文字 -->
     <tr>
         <td colspan="2" align="left">
             <ul>
                 <li>重建效果展示，包括静态渲染与动态视角变化。</li>
-                <li><a href="https://github.com/graphdeco-inria/gaussian-splatting">参考项目：Gaussina Splatting &raquo;</a></li>
+                <li><a href="https://github.com/graphdeco-inria/gaussian-splatting">参考项目：Gaussian Splatting &raquo;</a></li>
             </ul>
         </td>
     </tr>
+
     <!-- ==============================================================
-         项目 3: VGGT (单张图居中)
+         项目 3: VGGT
     =================================================================== -->
     <tr>
       <td colspan="2" align="center">
         <br/>
         <h3>🎮 VGGT Project</h3>
         <p>视觉生成与游戏技术探索</p>
-        <!-- width="70%" 控制图片大小，太大可以改小 -->
         <a href="https://github.com/wawjswt/你的项目链接3">
             <img src="works/vggt.png" width="70%" style="border-radius: 8px;" alt="vggt demo"/>
         </a>
         <br/><br/>
-        <p align="left">
+        <!-- 修正：使用 div 代替 p 标签来包裹 ul，并修复了 ul 闭合标签 -->
+        <div align="left">
           <ul>
-           <li>这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。<br/></li>
+           <li>这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。</li>
            <li><a href="https://github.com/facebookresearch/vggt">VGGT &raquo;</a></li>
-          <ul>
-        </p>
+          </ul>
+        </div>
       </td>
     </tr>
   </table>
@@ -168,7 +163,6 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <!-- Streak 能够正常显示，保持不变 -->
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=dark&hide_border=true&background=00000000" alt="streak graph" />
 </div>
 
@@ -177,7 +171,6 @@
 ### 🐍 Contribution Snake
 
 <div align="center">
-  <!-- 这里的链接引用的是上面第一步生成的分支里的文件 -->
   <img src="https://raw.githubusercontent.com/wawjswt/wawjswt/output/github-contribution-grid-snake.svg" alt="snake animation" />
 </div>
 
@@ -187,7 +180,7 @@
 
 <div align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=wawjswt&theme=onedark&no-frame=true&no-bg=true&margin-w=4" />
+    <img src="https://github-profile-trophy.vercel.app/?username=wawjswt&theme=onedark&no-frame=true&no-bg=true&margin-w=4" alt="trophies" />
   </a>
 </div>
 
@@ -200,5 +193,5 @@
 </div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=77&section=footer"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=77&section=footer" alt="footer" />
 </div>
