@@ -1,6 +1,6 @@
 <!-- 头部：动态打字机效果 -->
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=488&lines=Hi+there!+I'm+A+Developer;Building+the+Future;Loves+Open+Source;Coffee+Driven+Coder" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=666&lines=Hi+there!+I'm+SamMantos;Building+the+Future;Loves+Open+Source;Coffee+Driven+Coder" alt="Typing SVG" />
 </div>
 
 <div align="center">
@@ -12,9 +12,7 @@
   <a href="https://github.com/wawjswt">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="https://twitter.com/你的Twitter用户名">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
-  </a>
+  <!-- 这里的 Twitter 用户名我不确定，暂时保留你的设置或删掉 -->
   <img src="https://komarev.com/ghpvc/?username=wawjswt&label=PROFILE+VIEWS&style=for-the-badge&color=blueviolet" alt="Profile Views" />
 </div>
 
@@ -38,7 +36,6 @@
 ### 🛠️ Tech Stack | 技术栈 (动态图标)
 
 <div align="center">
-  <!-- 在这里挑选你想要的技术: https://skillicons.dev/ -->
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vue,nextjs,nodejs,python,pytorch,tensorflow,git,docker,linux,vscode,figma&perline=8&theme=dark" />
   </a>
@@ -65,9 +62,9 @@
 
 ### 🐍 Contribution Snake | 贪吃蛇动画
 
-<!-- 这个需要配置 GitHub Actions 才能自动更新，下面只是示例图 -->
 <div align="center">
-  <img src="https://github.com/wawjswt/wawjswt/blob/output/github-contribution-grid-snake.svg" alt="snake animation" />
+  <!-- 这里的链接引用的是上面第一步生成的分支里的文件 -->
+  <img src="https://raw.githubusercontent.com/wawjswt/wawjswt/output/github-contribution-grid-snake.svg" alt="snake animation" />
 </div>
 
 ---
@@ -89,5 +86,5 @@
 </div>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=88&width=666&section=footer"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=77&section=footer"/>
 </div>
