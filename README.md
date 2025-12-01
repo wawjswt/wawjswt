@@ -45,15 +45,41 @@
 
 ---
 
-### 🖼️ Recent Works
+---
+
+### 🚀 Recent Works | 近期成果
 
 <div align="center">
-  <!-- 修复版：移除了不稳定的透明参数，重新排列 -->
-  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=dark&hide_border=true" height="180" alt="stats graph" />
-  
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=dark&hide_border=true" height="180" alt="languages graph" />
+  <table>
+    <tr>
+      <!-- 第一个项目 -->
+      <td width="50%" align="center">
+        <h3>🤖 Object Detect</h3>
+        <!-- 下面 src="works/你的图片名.jpg" 这里的路径要对 -->
+        <img src="works/yolo-car.jpg" width="100%" style="border-radius: 10px;" />
+        <br/><br/>
+        <p>
+          基于 PyTorch 的生成式模型，<br/>
+          实现了高质量的风格迁移。<br/>
+          <a href="https://github.com/你的项目链接">查看代码 &raquo;</a>
+        </p>
+      </td>
+      
+      <!-- 第二个项目 -->
+      <td width="50%" align="center">
+        <h3>📄 CV Paper Implementation</h3>
+        <img src="works/demo2.jpg" width="100%" style="border-radius: 10px;" />
+        <br/><br/>
+        <p>
+          复现了 CVPR 2024 的 SOTA 算法，<br/>
+          在 COCO 数据集上提升了 2% mAP。<br/>
+          <a href="https://github.com/你的项目链接">阅读论文 &raquo;</a>
+        </p>
+      </td>
+    </tr>
+    <!-- 如果有更多项目，可以复制上面的 <tr>...</tr> 结构继续往下加 -->
+  </table>
 </div>
-
 ---
 
 ### 📊 GitHub Stats
