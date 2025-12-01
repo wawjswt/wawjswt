@@ -73,6 +73,16 @@
         </a>
       </td>
     </tr>
+    <tr>
+      <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
+      <td colspan="2" align="center">
+        <br/>
+        <a href="https://github.com/wawjswt/你的项目链接2">
+          <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
+          <img src="works/drone.gif" width="80%" style="border-radius: 8px;" alt="gs demo gif"/>
+        </a>
+      </td>
+    </tr>
     <!-- 描述文字行 (可选，如果不需要可以删掉这行) -->
     <tr>
         <td colspan="2" align="center">
@@ -105,16 +115,6 @@
       <td width="50%" align="center" valign="top">
         <a href="https://github.com/wawjswt/你的项目链接2">
           <img src="works/witcher.png" width="100%" style="border-radius: 8px;" alt="gs witcher"/>
-        </a>
-      </td>
-    </tr>
-     <tr>
-      <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
-      <td colspan="2" align="center">
-        <br/>
-        <a href="https://github.com/wawjswt/你的项目链接2">
-          <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
-          <img src="works/drone.gif" width="80%" style="border-radius: 8px;" alt="gs demo gif"/>
         </a>
       </td>
     </tr>
