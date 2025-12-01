@@ -77,8 +77,8 @@
     <tr>
         <td colspan="2" align="center">
             <ul>
-                <li>Detection of fire or car。</li>
-                <li>PyTorch, YOLOv5。</li>
+                <li>Detection of fire or car</li>
+                <li>PyTorch, YOLOv5</li>
                 <li><a href="https://github.com/wawjswt/Yolov5-Drone">Yolov5 &raquo;</a></li>
             </ul>
         </td>
