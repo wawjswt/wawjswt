@@ -83,8 +83,8 @@
             </ul>
         </td>
     </tr>
-    <!-- ==============================================================
-         项目 2: Gaussian Splatting (标题占一行，下面放两列图片)
+<!-- ==============================================================
+         项目 2: Gaussian Splatting (采用 2+1 布局)
     =================================================================== -->
     <tr>
       <td colspan="2" align="center">
@@ -93,30 +93,39 @@
         <p>3D 场景重建与渲染</p>
       </td>
     </tr>
+    <!-- 第一行：放两张静态结果图 -->
     <tr>
       <!-- 左边的图：Dog -->
-      <td width="50%" align="center">
+      <td width="50%" align="center" valign="top">
         <a href="https://github.com/wawjswt/你的项目链接2">
           <img src="works/dog.png" width="100%" style="border-radius: 8px;" alt="gs dog"/>
         </a>
       </td>
       <!-- 右边的图：Witcher -->
-      <td width="50%" align="center">
+      <td width="50%" align="center" valign="top">
         <a href="https://github.com/wawjswt/你的项目链接2">
           <img src="works/witcher.png" width="100%" style="border-radius: 8px;" alt="gs witcher"/>
         </a>
       </td>
-      <td width="80%" align="center">
+    </tr>
+    <!-- 新增：GIF 演示行 -->
+    <tr>
+      <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
+      <td colspan="2" align="center">
+        <br/>
+        <p><strong>✨ Live Demo ✨</strong></p>
         <a href="https://github.com/wawjswt/你的项目链接2">
-          <img src="works/demo.gif" width="100%" style="border-radius: 8px;" alt="gs witcher"/>
+          <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
+          <img src="works/demo.gif" width="90%" style="border-radius: 8px;" alt="gs demo gif"/>
         </a>
       </td>
     </tr>
+    <!-- 描述文字行 -->
     <tr>
-        <td colspan="2" align="center">
+        <td colspan="2" align="left">
             <ul>
-                <li>重建效果展示</li>
-                <li><a href="https://github.com/graphdeco-inria/gaussian-splatting">Gaussina Splatting &raquo;</a></li>
+                <li>重建效果展示，包括静态渲染与动态视角变化。</li>
+                <li><a href="https://github.com/graphdeco-inria/gaussian-splatting">参考项目：Gaussina Splatting &raquo;</a></li>
             </ul>
         </td>
     </tr>
