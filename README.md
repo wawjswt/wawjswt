@@ -108,6 +108,16 @@
         </a>
       </td>
     </tr>
+     <tr>
+      <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
+      <td colspan="2" align="center">
+        <br/>
+        <a href="https://github.com/wawjswt/你的项目链接2">
+          <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
+          <img src="works/drone.gif" width="80%" style="border-radius: 8px;" alt="gs demo gif"/>
+        </a>
+      </td>
+    </tr>
     <!-- 新增：GIF 演示行 -->
     <tr>
       <!-- 使用 colspan="2" 让这个单元格横跨两列 -->
@@ -116,7 +126,7 @@
         <p><strong>✨ Live Demo ✨</strong></p>
         <a href="https://github.com/wawjswt/你的项目链接2">
           <!-- width="90%" 控制GIF大小，可以根据效果调整 -->
-          <img src="works/demo.gif" width="90%" style="border-radius: 8px;" alt="gs demo gif"/>
+          <img src="works/demo.gif" width="80%" style="border-radius: 8px;" alt="gs demo gif"/>
         </a>
       </td>
     </tr>
