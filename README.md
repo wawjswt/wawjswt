@@ -57,6 +57,7 @@
         <h3>🤖 Object Detect</h3>
         <!-- 下面 src="works/你的图片名.jpg" 这里的路径要对 -->
         <img src="works/yolo-car.jpg" width="100%" style="border-radius: 10px;" />
+        <img src="works/yolo-fire.jpg" width="100%" style="border-radius: 10px;" />
         <br/><br/>
         <p>
           基于 PyTorch 的生成式模型，<br/>
@@ -64,7 +65,7 @@
           <a href="https://github.com/你的项目链接">查看代码 &raquo;</a>
         </p>
       </td>
-      
+    <tr>
       <!-- 第二个项目 -->
       <td width="50%" align="center">
         <h3>📄 CV Paper Implementation</h3>
