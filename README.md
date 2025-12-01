@@ -69,7 +69,8 @@
       <!-- 第二个项目 -->
       <td width="50%" align="center">
         <h3>📄 CV Paper Implementation</h3>
-        <img src="works/demo2.jpg" width="100%" style="border-radius: 10px;" />
+        <img src="works/dog.png" width="100%" style="border-radius: 10px;" />
+        <img src="works/witcher.png" width="100%" style="border-radius: 10px;" />
         <br/><br/>
         <p>
           复现了 CVPR 2024 的 SOTA 算法，<br/>
