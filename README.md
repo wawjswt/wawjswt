@@ -162,9 +162,7 @@
 ### 📊 GitHub Stats
 
 <div align="center">
-  <!-- 左边：核心数据（使用了 Rickstaa 的镜像源，修复报错问题） -->
-  <img src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=wawjswt&show_icons=true&theme=dark" height="180" alt="stats graph" />
-  
+
   <!-- 右边：连续打卡数据 -->
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=dark&hide_border=true&background=00000000" height="180" alt="streak graph" />
 </div>
