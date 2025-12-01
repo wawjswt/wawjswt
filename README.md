@@ -1,6 +1,6 @@
 <!-- 头部：动态打字机效果 -->
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=666&lines=Hi+there!+I'm+SamMantos;Building+the+Future;Loves+Open+Source;Coffee+Driven+Coder" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=666&lines=Hi+there!🤗+I'm+SamMantos😘;From WHU🏫;Enchantee🔆" alt="Typing SVG" />
 </div>
 
 <div align="center">
@@ -18,22 +18,22 @@
 
 ---
 
-### 👨‍💻 About Me | 关于我
+### 👨‍💻 About Me
 
 <div align="center">
   <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30" /> 
-  <b>正在学习:</b> React, Python, AI Engineering <br/>
+  <b>Learning:</b> Python, AI Engineering, Latex <br/>
   <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="30" /> 
-  <b>目前专注于:</b> 全栈开发 & 生成式 AI 应用 <br/>
+  <b>Focusing:</b> CV, PR, AI, RS <br/>
   <img src="https://media.giphy.com/media/LpDmM2wSt6kTm/giphy.gif" width="30" /> 
-  <b>爱好:</b> 🎮 游戏, 📷 摄影, 🎹 音乐 <br/>
+  <b>Hobby:</b> 🎮 Game, 📷 Photograph, 🎹 Music, ⚽ Soccer <br/>
   <img src="https://media.giphy.com/media/QssGEmpjCS4Ch23C8X/giphy.gif" width="30" /> 
-  <b>联系我:</b> your_email@example.com
+  <b>Contact:</b> Wentian_Shen@whu.edu.cn
 </div>
 
 ---
 
-### 🛠️ Tech Stack | 技术栈 (动态图标)
+### 🛠️ Tech Stack
 
 <div align="center">
   <a href="https://skillicons.dev">
@@ -43,7 +43,7 @@
 
 ---
 
-### 📊 GitHub Stats | 数据面板
+### 📊 GitHub Stats
 
 <div align="center">
   <!-- 左边：综合数据 -->
@@ -60,7 +60,7 @@
 
 ---
 
-### 🐍 Contribution Snake | 贪吃蛇动画
+### 🐍 Contribution Snake
 
 <div align="center">
   <!-- 这里的链接引用的是上面第一步生成的分支里的文件 -->
@@ -69,7 +69,7 @@
 
 ---
 
-### 🏆 Trophies | 成就奖杯
+### 🏆 Trophies
 
 <div align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
@@ -79,7 +79,7 @@
 
 ---
 
-### 🤣 Random Joke | 每日一笑
+### 🤣 Random Joke
 
 <div align="center">
   <img src="https://readme-jokes.vercel.app/api?theme=dark" alt="Jokes Card" />
