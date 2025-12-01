@@ -49,14 +49,14 @@
 
 <div align="center">
   <!-- 修复版：移除了不稳定的透明参数，重新排列 -->
-  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true" height="180" alt="stats graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=dark&hide_border=true" height="180" alt="stats graph" />
   
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" height="180" alt="languages graph" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=dark&hide_border=true" height="180" alt="languages graph" />
 </div>
 
 <div align="center">
   <!-- Streak 能够正常显示，保持不变 -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=tokyonight&hide_border=true&background=00000000" alt="streak graph" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=dark&hide_border=true&background=00000000" alt="streak graph" />
 </div>
 
 ---
