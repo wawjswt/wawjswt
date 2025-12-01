@@ -79,7 +79,7 @@
             <ul>
                 <li>Detection of fire or car。</li>
                 <li>PyTorch, YOLOv5。</li>
-                <li><a href="https://github.com/ultralytics/yolov5">Yolov5 &raquo;</a></li>
+                <li><a href="[https://github.com/ultralytics/yolov5](https://github.com/wawjswt/Yolov5-Drone)">Yolov5 &raquo;</a></li>
             </ul>
         </td>
     </tr>
@@ -129,8 +129,8 @@
         </a>
         <br/><br/>
         <p align="left">
-           这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。<br/>
-           <a href="https://github.com/facebookresearch/vggt">VGGT &raquo;</a>
+           <li>这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。<br/></li>
+           <li><a href="https://github.com/facebookresearch/vggt">VGGT &raquo;</a></li>
         </p>
       </td>
     </tr>
