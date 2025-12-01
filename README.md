@@ -106,6 +106,11 @@
           <img src="works/witcher.png" width="100%" style="border-radius: 8px;" alt="gs witcher"/>
         </a>
       </td>
+      <td width="80%" align="center">
+        <a href="https://github.com/wawjswt/你的项目链接2">
+          <img src="works/demo.gif" width="100%" style="border-radius: 8px;" alt="gs witcher"/>
+        </a>
+      </td>
     </tr>
     <tr>
         <td colspan="2" align="center">
