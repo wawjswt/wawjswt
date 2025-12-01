@@ -75,7 +75,7 @@
     </tr>
     <!-- 描述文字行 (可选，如果不需要可以删掉这行) -->
     <tr>
-        <td colspan="2" align="left">
+        <td colspan="2" align="center">
             <ul>
                 <li>Detection of fire or car。</li>
                 <li>PyTorch, YOLOv5。</li>
@@ -108,7 +108,7 @@
       </td>
     </tr>
     <tr>
-        <td colspan="2" align="left">
+        <td colspan="2" align="center">
             <ul>
                 <li>重建效果展示</li>
                 <li><a href="https://github.com/graphdeco-inria/gaussian-splatting">Gaussina Splatting &raquo;</a></li>
