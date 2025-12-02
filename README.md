@@ -168,12 +168,12 @@
 
 <div align="center">
   <!-- 第一排：核心数据 + 常用语言 -->
-<table style="border: none; border-collapse: collapse;">
+<table>
   <tr>
-    <td align="center" style="border: none;">
+    <td align="center">
       <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true" alt="stats graph" />
     </td>
-    <td align="center" style="border: none;">
+    <td align="center">
       <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
     </td>
   </tr>
