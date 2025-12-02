@@ -1,4 +1,3 @@
---- START OF FILE README.md ---
 
 <!-- 🌟 背景装饰：顶部波浪 (Header) -->
 <div align="center">
@@ -213,5 +212,5 @@
 
 <!-- 🌟 背景装饰：底部波浪 (Footer) -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" alt="footer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=77&section=footer" alt="footer" />
 </div>
