@@ -1,3 +1,10 @@
+--- START OF FILE README.md ---
+
+<!-- 🌟 背景装饰：顶部波浪 (Header) -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=header"/>
+</div>
+
 <!-- 头部：动态打字机效果 -->
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=33CCFF&center=true&vCenter=true&width=666&lines=Hi+there!+🤗+I'm+SamMantos;From+WHU;Enchante+!+😘" alt="Typing SVG" />
@@ -144,7 +151,6 @@
             <img src="works/vggt.png" width="70%" style="border-radius: 8px;" alt="vggt demo"/>
         </a>
         <br/><br/>
-        <!-- 修正：使用 div 代替 p 标签来包裹 ul，并修复了 ul 闭合标签 -->
         <div align="left">
           <ul>
            <li>这里是 VGGT 项目的简短介绍。探索了生成式 AI 在游戏场景中的应用。</li>
@@ -158,19 +164,47 @@
 
 ---
 
-
-### 📊 GitHub Stats
+<!-- Action 区域：包含核心数据、折线图和打卡数据 -->
+### 🏃 Action
 
 <div align="center">
+  <!-- 第一排：核心数据 + 常用语言 -->
+  <table style="border: none; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="border: none;">
+         <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true" alt="stats graph" />
+      </td>
+      <td align="center" style="border: none;">
+         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
+      </td>
+    </tr>
+  </table>
 
-  <!-- 右边：连续打卡数据 -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=dark&hide_border=true&background=00000000" height="180" alt="streak graph" />
+  <!-- 第二排：Activity Graph (折线活动图) -->
+  <br/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=wawjswt&theme=tokyonight&hide_border=true" width="95%" alt="Activity Graph" />
+
+  <!-- 第三排：Streak 连续打卡 (居中显示，作为奖杯) -->
+  <br/>
+  <br/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=tokyonight&hide_border=true&background=00000000" alt="streak graph" />
 </div>
 
-<br/>
+---
 
-<!-- 底部：贪吃蛇动画 -->
+<!-- Contribution 区域：同时保留静态格子和贪吃蛇 -->
+### ☁️ Contribution Activity
+
 <div align="center">
+  <!-- 1. 静态贡献格子图 (颜色定制为 33CCFF 以匹配主页色调) -->
+  <!-- 这是一个静态生成的图片，让你在 README 内部就能看到那一排格子 -->
+  <p><strong>Yearly Contribution Board</strong></p>
+  <img src="http://ghchart.rshah.org/33CCFF/wawjswt" alt="wawjswt's Github chart" />
+  
+  <br/><br/>
+
+  <!-- 2. 贪吃蛇动画 -->
+  <!-- 引用你仓库分支里的 SVG 动画 -->
   <img src="https://raw.githubusercontent.com/wawjswt/wawjswt/output/github-contribution-grid-snake.svg" alt="snake animation" />
 </div>
 
@@ -182,6 +216,7 @@
   <img src="https://readme-jokes.vercel.app/api?theme=dark" alt="Jokes Card" />
 </div>
 
+<!-- 🌟 背景装饰：底部波浪 (Footer) -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=77&section=footer" alt="footer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" alt="footer" />
 </div>
