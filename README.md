@@ -168,16 +168,16 @@
 
 <div align="center">
   <!-- 第一排：核心数据 + 常用语言 -->
-  <table style="border: none; border-collapse: collapse;">
-    <tr>
-      <td align="center" style="border: none;">
-         <img src="https://github-readme-stats.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true" alt="stats graph" />
-      </td>
-      <td align="center" style="border: none;">
-         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
-      </td>
-    </tr>
-  </table>
+<table style="border: none; border-collapse: collapse;">
+  <tr>
+    <td align="center" style="border: none;">
+      <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true" alt="stats graph" />
+    </td>
+    <td align="center" style="border: none;">
+      <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
+    </td>
+  </tr>
+</table>
 
   <!-- 第二排：Activity Graph (折线活动图) -->
   <br/>
