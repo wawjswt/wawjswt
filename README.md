@@ -2,7 +2,7 @@
 
 <!-- 🌟 背景装饰：顶部波浪 (Header) -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=header"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=77&section=header"/>
 </div>
 
 <!-- 头部：动态打字机效果 -->
@@ -196,12 +196,7 @@
 ### ☁️ Contribution Activity
 
 <div align="center">
-  <!-- 1. 静态贡献格子图 (颜色定制为 33CCFF 以匹配主页色调) -->
-  <!-- 这是一个静态生成的图片，让你在 README 内部就能看到那一排格子 -->
-  <p><strong>Yearly Contribution Board</strong></p>
-  <img src="http://ghchart.rshah.org/33CCFF/wawjswt" alt="wawjswt's Github chart" />
-  
-  <br/><br/>
+
 
   <!-- 2. 贪吃蛇动画 -->
   <!-- 引用你仓库分支里的 SVG 动画 -->
