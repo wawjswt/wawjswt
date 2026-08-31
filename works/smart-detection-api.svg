@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Detection API architecture</title>
+  <desc id="desc">Video sources and drone telemetry flow through an orchestration layer to live operations and event delivery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="0.55" stop-color="#13233f"/><stop offset="1" stop-color="#1c1244"/></linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7dd3fc"/></marker>
+  </defs>
+  <rect width="1200" height="510" rx="28" fill="url(#bg)"/>
+  <circle cx="1070" cy="80" r="180" fill="#7c3aed" opacity=".15"/><circle cx="92" cy="444" r="175" fill="#06b6d4" opacity=".12"/>
+  <text x="60" y="68" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">SMART DETECTION API</text>
+  <text x="60" y="98" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="16" letter-spacing="1.2">VISION · TELEMETRY · MISSION ORCHESTRATION</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="58" y="164" width="238" height="235" rx="20" fill="#101b31" stroke="#334155"/>
+    <text x="83" y="204" fill="#67e8f9" font-size="16" font-weight="700">INPUT LAYER</text>
+    <rect x="82" y="229" width="190" height="52" rx="12" fill="#172a46"/><text x="102" y="260" fill="#f8fafc" font-size="17">RTSP / HTTP / File</text>
+    <rect x="82" y="299" width="190" height="70" rx="12" fill="#172a46"/><text x="102" y="328" fill="#f8fafc" font-size="17">MQTT Telemetry</text><text x="102" y="351" fill="#94a3b8" font-size="13">GPS · altitude · attitude</text>
+
+    <path d="M308 280 H408" stroke="#7dd3fc" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="424" y="137" width="352" height="290" rx="26" fill="#101b31" stroke="url(#core)" stroke-width="2" filter="url(#glow)"/>
+    <text x="455" y="183" fill="#f8fafc" font-size="22" font-weight="700">DETECTION ORCHESTRATOR</text>
+    <text x="455" y="211" fill="#a5b4fc" font-size="14">Flask + YOLO + OpenCV</text>
+    <line x1="455" y1="232" x2="742" y2="232" stroke="#334155"/>
+    <circle cx="470" cy="266" r="6" fill="#22d3ee"/><text x="489" y="271" fill="#e2e8f0" font-size="16">Multi-segment mission control</text>
+    <circle cx="470" cy="303" r="6" fill="#a78bfa"/><text x="489" y="308" fill="#e2e8f0" font-size="16">Polygon ROI / visual geofence</text>
+    <circle cx="470" cy="340" r="6" fill="#34d399"/><text x="489" y="345" fill="#e2e8f0" font-size="16">Frame confirmation &amp; per-model thresholds</text>
+    <circle cx="470" cy="377" r="6" fill="#fbbf24"/><text x="489" y="382" fill="#e2e8f0" font-size="16">Task lifecycle &amp; model hot reload</text>
+
+    <path d="M790 280 H890" stroke="#7dd3fc" stroke-width="4" marker-end="url(#arrow)"/>
+    <rect x="908" y="164" width="234" height="235" rx="20" fill="#101b31" stroke="#334155"/>
+    <text x="934" y="204" fill="#c4b5fd" font-size="16" font-weight="700">OPERATIONS</text>
+    <rect x="932" y="229" width="186" height="52" rx="12" fill="#241b4b"/><text x="954" y="260" fill="#f8fafc" font-size="17">MJPEG Live Feed</text>
+    <rect x="932" y="299" width="186" height="70" rx="12" fill="#241b4b"/><text x="954" y="328" fill="#f8fafc" font-size="17">Event + Snapshot</text><text x="954" y="351" fill="#c4b5fd" font-size="13">telemetry-aware delivery</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" font-weight="700">
+    <rect x="421" y="460" width="114" height="29" rx="14" fill="#164e63"/><text x="442" y="480" fill="#cffafe">REAL-TIME</text>
+    <rect x="550" y="460" width="128" height="29" rx="14" fill="#4c1d95"/><text x="570" y="480" fill="#ede9fe">MULTI-SEGMENT</text>
+    <rect x="693" y="460" width="95" height="29" rx="14" fill="#14532d"/><text x="716" y="480" fill="#dcfce7">POLYGON ROI</text>
+  </g>
+</svg>
