@@ -14,6 +14,13 @@
   <img src="https://komarev.com/ghpvc/?username=wawjswt&label=MISSION+VISITS&style=for-the-badge&color=0EA5E9" alt="Profile views" />
 </div>
 
+<div align="center">
+  <a href="#now--smart-detection-api">NOW</a> ·
+  <a href="#-mission-archives">MISSION ARCHIVES</a> ·
+  <a href="#-research-radar">RESEARCH RADAR</a> ·
+  <a href="#-github-telemetry">GITHUB TELEMETRY</a>
+</div>
+
 ---
 
 ## 🛸 Identity Cockpit
@@ -31,6 +38,75 @@
 - **What I build:** systems connecting model inference, video streams, GPS, MQTT and task orchestration.
 - **Beyond code:** photography, games, music and football.
 - **Contact:** [Wentian_Shen@whu.edu.cn](mailto:Wentian_Shen@whu.edu.cn)
+
+## NOW // Smart Detection API
+
+<div align="center">
+  <img src="works/now-smart-detection-api.svg" width="100%" alt="Animated Smart Detection API flow from video and DJI telemetry through multi-model inference, spatial filters, frame confirmation and event delivery" />
+</div>
+
+> **Current build:** a local Flask prototype turning aerial video and drone context into a controllable inspection mission.
+> 当前重点不是“跑一次检测”，而是把检测变成可追踪、可确认、可交付的任务闭环。
+
+| Current signal | Readout | Current signal | Readout |
+| :-- | :-- | :-- | :-- |
+| 🟢 RUNTIME | Flask + Waitress | 🛰️ INPUT | RTSP · HTTP · local file |
+| 🧠 INFERENCE | Multi-model YOLOv5 | 📡 CONTEXT | MQTT GPS · altitude · attitude |
+| 🗺️ CONTROL | GPS segments + Polygon ROI | ✅ RELIABILITY | 4-frame confirmation |
+| 📤 DELIVERY | MJPEG · snapshots · event push | 🔧 OPERATIONS | stop · hot reload · bounded queue |
+
+<details>
+<summary><b>Open the current mission loop</b></summary>
+
+```text
+POST /detect
+  → attach a video source, drone identity, target classes and optional mission segments
+  → wait for GPS arrival at a segment start point
+  → route detections through model-specific confidence policies
+  → keep detections whose centers fall inside the active Polygon ROI
+  → require four consecutive detection frames before creating an event
+  → stream annotated frames, save a snapshot and optionally push business metadata
+  → stop at the segment endpoint, switch flight legs or accept a stop command
+```
+
+The service also caches DJI telemetry from MQTT, exposes the latest location on demand, and supports model reload without rebuilding the whole application.
+</details>
+
+<details>
+<summary><b>Explore the public route surface</b></summary>
+
+```http
+POST /detect                           # create a detection task
+GET  /video_feed/<task_id>             # MJPEG result stream
+GET  /api/telemetry?sn=<drone_sn>      # latest MQTT telemetry
+GET  /get_latest_snapshot?task_id=<id> # latest confirmed snapshot
+POST /stop_detect                      # stop task and release stream resources
+POST /reload_models                    # hot reload configured models
+```
+
+The public showcase intentionally describes the architecture only. Connection credentials, internal service addresses and deployment-specific configuration stay outside this profile README.
+</details>
+
+<details>
+<summary><b>Sanitized task request</b></summary>
+
+```json
+{
+  "rtsp_url": "rtsp://camera-or-drone-stream/live",
+  "drone_sn": "DRONE-SN-PLACEHOLDER",
+  "detect_classes": [0, 1, 3, 4],
+  "conf_thres_drone": 0.52,
+  "conf_thres_ent": 0.75,
+  "segments": [
+    {
+      "start": [START_LAT, START_LON],
+      "stop": [STOP_LAT, STOP_LON],
+      "roi": [0.08, 0.18, 0.92, 0.18, 0.96, 0.88, 0.12, 0.88]
+    }
+  ]
+}
+```
+</details>
 
 ## 🟢 Live Mission Dashboard
 
@@ -157,18 +233,6 @@ POST /reload_models                    # hot reload configured models
 | STATUS | 🟣 Learning radar |
 | OBJECTIVE | Visual geometry, scene understanding and interactive spatial expression |
 | REFERENCE | [Explore VGGT →](https://github.com/facebookresearch/vggt) |
-
-## 🧩 System Architecture
-
-<div align="center"><img src="works/smart-detection-api.svg" width="96%" alt="Smart Detection API perception to operations architecture" /></div>
-
-| Layer | Capability | Operational value |
-| :-- | :-- | :-- |
-| 👁️ Perception | YOLO multi-model inference · category mapping | Match targets with appropriate policies |
-| 🗺️ Spatial control | GPS segments · polygon ROI | Decide when to detect and where to trust |
-| 📡 Data connection | RTSP / HTTP · MQTT telemetry cache | Attach visual observations to flight context |
-| ✅ Reliability | Per-model thresholds · frame confirmation | Reduce transient live-video false positives |
-| 🛠️ Operations | MJPEG · snapshots · stop · hot reload | Support demos, debugging and deployment |
 
 ## 🔭 Research Radar
 

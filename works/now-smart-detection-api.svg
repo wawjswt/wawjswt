@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Detection API current mission flow</title>
+  <desc id="desc">Animated architecture showing video and drone telemetry entering multi-model YOLO inference, spatial gating, four-frame confirmation, and event delivery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07142b"/>
+      <stop offset="0.55" stop-color="#0d2440"/>
+      <stop offset="1" stop-color="#211044"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0" x2="1">
+      <stop stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="520" rx="18" fill="url(#bg)" stroke="#1e4770"/>
+  <g stroke="#5eeaff" stroke-opacity=".08">
+    <path d="M0 92H1200M0 184H1200M0 276H1200M0 368H1200M0 460H1200"/>
+    <path d="M80 0V520M240 0V520M400 0V520M560 0V520M720 0V520M880 0V520M1040 0V520"/>
+  </g>
+
+  <g font-family="monospace">
+    <text x="42" y="45" fill="#22d3ee" font-size="16" letter-spacing="3">NOW // SMART DETECTION API</text>
+    <text x="42" y="72" fill="#94a3b8" font-size="12">LOCAL RUNTIME · UAV INSPECTION · OBSERVABLE MISSION LOOP</text>
+    <text x="1034" y="45" fill="#22c55e" font-size="13">● ACTIVE</text>
+
+    <g fill="#0d2742" stroke="#22d3ee" stroke-width="2">
+      <rect x="42" y="126" width="208" height="64" rx="10"/>
+      <rect x="42" y="224" width="208" height="64" rx="10"/>
+      <rect x="42" y="322" width="208" height="64" rx="10"/>
+    </g>
+    <g fill="#dffaff" font-size="16">
+      <text x="75" y="153">VIDEO SOURCES</text>
+      <text x="75" y="176" fill="#a5f3fc" font-size="12">RTSP · HTTP · FILE</text>
+      <text x="75" y="251">MQTT TELEMETRY</text>
+      <text x="75" y="274" fill="#a5f3fc" font-size="12">GPS · ALT · ATTITUDE</text>
+      <text x="75" y="349">MISSION INPUT</text>
+      <text x="75" y="372" fill="#a5f3fc" font-size="12">SEGMENTS · CLASSES · ROI</text>
+    </g>
+
+    <g fill="#15163f" stroke="#8b5cf6" stroke-width="2">
+      <rect x="340" y="112" width="286" height="282" rx="14"/>
+      <rect x="364" y="176" width="238" height="52" rx="8" fill="#201d57" stroke="#a78bfa"/>
+      <rect x="364" y="242" width="112" height="56" rx="8" fill="#201d57" stroke="#a78bfa"/>
+      <rect x="490" y="242" width="112" height="56" rx="8" fill="#201d57" stroke="#a78bfa"/>
+      <rect x="364" y="312" width="238" height="52" rx="8" fill="#201d57" stroke="#a78bfa"/>
+    </g>
+    <text x="386" y="148" fill="#f8fafc" font-size="21" font-weight="700">MULTI-MODEL ENGINE</text>
+    <text x="392" y="164" fill="#a5b4fc" font-size="11">FLASK ORCHESTRATION · YOLOv5 · OPENCV</text>
+    <text x="414" y="208" fill="#dffaff" font-size="14">MODEL ROUTING + THRESHOLDS</text>
+    <text x="382" y="266" fill="#dffaff" font-size="13">VISION</text>
+    <text x="382" y="285" fill="#94a3b8" font-size="11">vehicle / person</text>
+    <text x="510" y="266" fill="#dffaff" font-size="13">EVENT</text>
+    <text x="510" y="285" fill="#94a3b8" font-size="11">fire / excavator</text>
+    <text x="392" y="344" fill="#dffaff" font-size="14">DETECTIONS → UNIFIED EVENTS</text>
+    <path d="M375 192H590" stroke="#22d3ee" stroke-width="2" stroke-dasharray="10 14" opacity=".8">
+      <animate attributeName="stroke-dashoffset" from="0" to="-48" dur="1.1s" repeatCount="indefinite"/>
+    </path>
+
+    <g fill="#102f3a" stroke="#22d3ee" stroke-width="2">
+      <rect x="712" y="140" width="196" height="96" rx="12"/>
+      <rect x="712" y="260" width="196" height="96" rx="12"/>
+    </g>
+    <text x="752" y="174" fill="#dffaff" font-size="17">SPATIAL GATE</text>
+    <text x="738" y="201" fill="#86efac" font-size="13">GPS SEGMENT ACTIVE</text>
+    <text x="752" y="294" fill="#dffaff" font-size="17">POLYGON ROI</text>
+    <text x="738" y="321" fill="#86efac" font-size="13">CENTER-IN-REGION FILTER</text>
+    <circle cx="876" cy="174" r="8" fill="#22c55e" filter="url(#softGlow)">
+      <animate attributeName="r" values="6;12;6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+
+    <g fill="#123525" stroke="#22c55e" stroke-width="2">
+      <rect x="990" y="112" width="168" height="74" rx="10"/>
+      <rect x="990" y="224" width="168" height="74" rx="10"/>
+      <rect x="990" y="336" width="168" height="74" rx="10"/>
+    </g>
+    <text x="1018" y="143" fill="#dcfce7" font-size="15">4-FRAME CHECK</text>
+    <text x="1021" y="166" fill="#86efac" font-size="12">CONFIRM SIGNAL</text>
+    <text x="1013" y="255" fill="#dcfce7" font-size="15">MJPEG STREAM</text>
+    <text x="1019" y="278" fill="#86efac" font-size="12">LIVE FEEDBACK</text>
+    <text x="1017" y="367" fill="#dcfce7" font-size="15">EVENT OUTPUT</text>
+    <text x="1008" y="390" fill="#86efac" font-size="12">SNAPSHOT · PUSH</text>
+
+    <g fill="none" stroke-width="3" stroke-dasharray="12 16" filter="url(#glow)">
+      <path d="M250 158C292 158 300 190 340 190" stroke="#22d3ee"/>
+      <path d="M250 256H340" stroke="#22d3ee"/>
+      <path d="M250 354C292 354 300 316 340 316" stroke="#22d3ee"/>
+      <path d="M626 190C664 190 672 188 712 188" stroke="#8b5cf6"/>
+      <path d="M626 316C664 316 672 308 712 308" stroke="#8b5cf6"/>
+      <path d="M908 188C948 188 952 150 990 150" stroke="#22c55e"/>
+      <path d="M908 308C948 308 952 261 990 261" stroke="#22c55e"/>
+      <path d="M908 308C948 308 952 373 990 373" stroke="#22c55e"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="1.4s" repeatCount="indefinite"/>
+    </g>
+
+    <g fill="#64748b" font-size="11">
+      <text x="280" y="144">STREAM</text>
+      <text x="278" y="242">SIGNAL</text>
+      <text x="275" y="389">POLICY</text>
+      <text x="652" y="176">INFERENCE</text>
+      <text x="655" y="299">FILTER</text>
+      <text x="930" y="136">CONFIRMED</text>
+    </g>
+
+    <path d="M42 454H1158" stroke="url(#cyanLine)" stroke-width="3" filter="url(#glow)">
+      <animate attributeName="stroke-dasharray" values="0 1120;380 740;0 1120" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <text x="42" y="484" fill="#94a3b8" font-size="12">MISSION LOOP // CREATE → DETECT → CONFIRM → DELIVER → STOP / RELOAD</text>
+    <text x="928" y="484" fill="#22d3ee" font-size="12">STATIC README SNAPSHOT</text>
+  </g>
+</svg>
