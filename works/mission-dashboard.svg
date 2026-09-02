@@ -1,9 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
   <title id="title">Mission data flow dashboard</title><desc id="desc">Animated flow from RTSP, MQTT and GPS into YOLO inference and confirmed events.</desc>
   <defs><linearGradient id="panel" x1="0" x2="1"><stop stop-color="#081426"/><stop offset="1" stop-color="#111b3c"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-  <rect width="1200" height="430" rx="16" fill="url(#panel)" stroke="#1e4770"/><g font-family="monospace"><text x="32" y="42" fill="#22d3ee" font-size="16" letter-spacing="3">LIVE MISSION DASHBOARD // DATA FLOW</text><text x="1030" y="42" fill="#22c55e" font-size="13">● LINKED</text>
-  <g fill="#0d2742" stroke="#22d3ee"><rect x="38" y="90" width="170" height="62" rx="8"/><rect x="38" y="184" width="170" height="62" rx="8"/><rect x="38" y="278" width="170" height="62" rx="8"/></g><g fill="#dffaff" font-size="16"><text x="70" y="126">RTSP VIDEO</text><text x="70" y="220">MQTT TELEMETRY</text><text x="78" y="314">GPS SEGMENTS</text></g>
-  <g fill="#171542" stroke="#8b5cf6" stroke-width="2"><rect x="355" y="145" width="205" height="128" rx="10"/></g><text x="397" y="190" fill="#dffaff" font-size="19">YOLO ENGINE</text><text x="385" y="222" fill="#a5b4fc" font-size="13">MODEL ROUTING</text><text x="383" y="247" fill="#a5b4fc" font-size="13">ROI FILTERING</text>
-  <g fill="#123525" stroke="#22c55e" stroke-width="2"><rect x="760" y="145" width="205" height="128" rx="10"/></g><text x="805" y="190" fill="#dcfce7" font-size="18">EVENT CONFIRMED</text><text x="823" y="222" fill="#86efac" font-size="13">SNAPSHOT</text><text x="835" y="247" fill="#86efac" font-size="13">MJPEG / API</text>
-  <g fill="none" stroke-width="3" stroke-dasharray="12 14" filter="url(#glow)"><path d="M208 121H355M208 215H355M208 309C270 309 275 245 355 245M560 209h200" stroke="#22d3ee"><animate attributeName="stroke-dashoffset" from="0" to="-52" dur="1.2s" repeatCount="indefinite"/></path></g><g fill="#64748b" font-size="12"><text x="245" y="108">STREAM</text><text x="245" y="202">SIGNAL</text><text x="268" y="294">POSITION</text><text x="620" y="195">DETECTION EVENT</text></g></g>
+  <rect width="1000" height="430" rx="16" fill="url(#panel)" stroke="#1e4770"/><g font-family="monospace"><text x="32" y="42" fill="#22d3ee" font-size="16" letter-spacing="3">LIVE MISSION DASHBOARD // DATA FLOW</text>
+  <text x="900" y="42" fill="#22c55e" font-size="13">● LINKED</text>
+  <g fill="#0d2742" stroke="#22d3ee">
+    <rect x="38" y="90" width="170" height="62" rx="8"/>
+    <rect x="38" y="184" width="170" height="62" rx="8"/>
+    <rect x="38" y="278" width="170" height="62" rx="8"/>
+  </g>
+  
+  <g fill="#dffaff" font-size="16">
+    <text x="70" y="126">RTSP VIDEO</text>
+    <text x="70" y="220">MQTT TELEMETRY</text>
+    <text x="78" y="314">GPS SEGMENTS</text>
+  </g>
+  
+  <g fill="#171542" stroke="#8b5cf6" stroke-width="2">
+    <rect x="355" y="145" width="205" height="128" rx="10"/>
+  </g>
+  
+  <text x="397" y="190" fill="#dffaff" font-size="19">YOLO ENGINE</text>
+  <text x="385" y="222" fill="#a5b4fc" font-size="13">MODEL ROUTING</text>
+  <text x="383" y="247" fill="#a5b4fc" font-size="13">ROI FILTERING</text>
+  
+  <g fill="#123525" stroke="#22c55e" stroke-width="2">
+    <rect x="760" y="145" width="205" height="128" rx="10"/>
+  </g>
+    <text x="805" y="190" fill="#dcfce7" font-size="18">EVENT CONFIRMED</text>
+    <text x="823" y="222" fill="#86efac" font-size="13">SNAPSHOT</text>
+    <text x="835" y="247" fill="#86efac" font-size="13">MJPEG / API</text>
+  <g fill="none" stroke-width="3" stroke-dasharray="12 14" filter="url(#glow)">
+    <path d="M208 121 C270 121 275 173 355 185 M208 215H355 M208 309 C270 309 275 245 355 245 M560 209 h200" stroke="#22d3ee">
+    <animate attributeName="stroke-dashoffset" from="0" to="-52" dur="1.2s" repeatCount="indefinite"/></path></g><g fill="#64748b" font-size="12">
+    <text x="245" y="108">STREAM</text>
+    <text x="245" y="202">SIGNAL</text>
+    <text x="268" y="294">POSITION</text>
+    <text x="620" y="195">DETECTION EVENT</text></g></g>
 </svg>
