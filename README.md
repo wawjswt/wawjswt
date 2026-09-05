@@ -53,7 +53,7 @@
 | 🟢 RUNTIME | Flask + Waitress | 🛰️ INPUT | RTSP · HTTP · local file |
 | 🧠 INFERENCE | Multi-model YOLOv5 | 📡 CONTEXT | MQTT GPS · altitude · attitude |
 | 🗺️ CONTROL | GPS segments + Polygon ROI | ✅ RELIABILITY | 4-frame confirmation |
-| 📤 DELIVERY | MJPEG · snapshots · event push | 🔧 OPERATIONS | stop · hot reload · bounded queue |
+| 📤 DELIVERY | MJPEG · snapshots · event push | 🔧 OPERATIONS | stop · hot reload · bounded queue · stream recovery |
 
 <details>
 <summary><b>Open the current mission loop</b></summary>
@@ -61,6 +61,7 @@
 ```text
 POST /detect
   → attach a video source, drone identity, target classes and optional mission segments
+  → keep the stream alive with bounded reconnect attempts and exponential backoff
   → wait for GPS arrival at a segment start point
   → route detections through model-specific confidence policies
   → keep detections whose centers fall inside the active Polygon ROI
@@ -69,7 +70,7 @@ POST /detect
   → stop at the segment endpoint, switch flight legs or accept a stop command
 ```
 
-The service also caches DJI telemetry from MQTT, exposes the latest location on demand, and supports model reload without rebuilding the whole application.
+If a stream drops, the service retries within its configured budget; once that budget is exhausted, it marks the stream as failed, releases capture resources and ends the affected task cleanly. The service also caches DJI telemetry from MQTT, exposes the latest location on demand, and supports model reload without rebuilding the whole application.
 </details>
 
 <details>
@@ -116,11 +117,11 @@ The public showcase intentionally describes the architecture only. Connection cr
 
 | System | Status | Operational role |
 | :-- | :--: | :-- |
-| Video inference | 🟢 ONLINE | RTSP / HTTP / local stream processing |
+| Video inference | 🟢 ONLINE | RTSP / HTTP / local stream processing with bounded reconnect |
 | UAV telemetry | 🟢 LINKED | MQTT GPS, attitude and altitude context |
 | Spatial control | 🟣 ACTIVE | GPS segments and polygon ROI |
 | Event reliability | 🟡 VERIFYING | Consecutive-frame confirmation |
-| Model deployment | 🟢 BUILDING | Serving, hot reload and field iteration |
+| Model deployment | 🟢 BUILDING | Serving, hot reload, stream recovery and field iteration |
 
 ## 🧭 Operational Toolkit
 
@@ -162,6 +163,7 @@ The public showcase intentionally describes the architecture only. Connection cr
 3. **Video + telemetry fusion:** RTSP / HTTP / local streams are linked with the latest MQTT GPS, attitude and altitude data.
 4. **Policy-aware inference:** target categories can route to different YOLO models with independent confidence thresholds.
 5. **Field operations:** consecutive-frame confirmation, MJPEG output, snapshots, stop control and model hot reload.
+6. **Stream resilience:** failed video connections use bounded exponential-backoff retries; terminal failures release resources and close the affected task cleanly.
 
 #### Mission flow
 
@@ -182,18 +184,18 @@ POST /stop_detect                      # stop task
 POST /reload_models                    # hot reload configured models
 ```
 
-<details><summary><b>任务请求示例：双航段 + 双电子围栏</b></summary>
+<details><summary><b>任务请求示例：双航段 + 双电子围栏（脱敏）</b></summary>
 
 ```json
 {
   "rtsp_url": "rtsp://camera-or-drone-stream/live",
-  "drone_sn": "DRONE-SN-001",
+  "drone_sn": "DRONE-SN-PLACEHOLDER",
   "detect_classes": [0, 1, 3, 4],
   "conf_thres_drone": 0.52,
   "conf_thres_ent": 0.75,
   "segments": [
-    {"start": {"lat": 30.53210, "lng": 114.36020}, "stop": {"lat": 30.53280, "lng": 114.36110}, "roi": [0.08, 0.18, 0.92, 0.18, 0.96, 0.88, 0.12, 0.88]},
-    {"start": {"lat": 30.53300, "lng": 114.36130}, "stop": {"lat": 30.53370, "lng": 114.36210}, "roi": [0.18, 0.20, 0.82, 0.82]}
+    {"start": [START_LAT_1, START_LON_1], "stop": [STOP_LAT_1, STOP_LON_1], "roi": [0.08, 0.18, 0.92, 0.18, 0.96, 0.88, 0.12, 0.88]},
+    {"start": [START_LAT_2, START_LON_2], "stop": [STOP_LAT_2, STOP_LON_2], "roi": [0.18, 0.20, 0.82, 0.82]}
   ]
 }
 ```
