@@ -42,7 +42,7 @@
 ## NOW // Smart Detection API
 
 <div align="center">
-  <img src="works/now-smart-detection-api.svg" width="100%" alt="Animated Smart Detection API flow from video and DJI telemetry through multi-model inference, spatial filters, frame confirmation and event delivery" />
+  <img src="works/now-smart-detection-api.svg" width="100%" alt="Smart Detection API data-flow diagram from video and DJI telemetry through Flask orchestration, multi-model inference, spatial gating, event confirmation and delivery" />
 </div>
 
 > **Current build:** a local Flask prototype turning aerial video and drone context into a controllable inspection mission.

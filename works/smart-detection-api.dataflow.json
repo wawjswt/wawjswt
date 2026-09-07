@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Smart Detection API Data Flow",
+    "locale": "en",
+    "output": "works/smart-detection-api.dataflow.html",
+    "quality_profile": "showcase",
+    "viewBox": [1080, 620],
+    "views": [
+      {
+        "id": "mission-path",
+        "label": "Mission path",
+        "focus": ["request", "orchestrator", "detector", "spatial", "confirm", "stream"],
+        "note": "Follow a detection task from request to annotated live feedback."
+      },
+      {
+        "id": "telemetry-gate",
+        "label": "Telemetry gate",
+        "focus": ["telemetry", "orchestrator", "spatial", "confirm"],
+        "note": "See how DJI telemetry and mission geometry constrain trusted detections."
+      },
+      {
+        "id": "reliability-delivery",
+        "label": "Reliability + delivery",
+        "focus": ["spatial", "confirm", "snapshot", "event", "stream"],
+        "note": "Trace confirmation, snapshots, MJPEG output, and optional event delivery."
+      }
+    ]
+  },
+  "stages": [
+    { "label": "Mission inputs" },
+    { "label": "Orchestration" },
+    { "label": "Vision + spatial" },
+    { "label": "Reliability" },
+    { "label": "Delivery" }
+  ],
+  "nodes": [
+    { "id": "video", "type": "frontend", "label": "Video Sources", "sublabel": "RTSP · HTTP · local file", "stage": 0, "row": 0, "tag": "frames" },
+    { "id": "request", "type": "frontend", "label": "Mission Request", "sublabel": "POST /detect", "stage": 0, "row": 2, "tag": "task + policy" },
+    { "id": "telemetry", "type": "messagebus", "label": "DJI Telemetry", "sublabel": "MQTT cache", "stage": 0, "row": 3, "tag": "GPS · alt · attitude" },
+    { "id": "orchestrator", "type": "backend", "label": "Flask Orchestrator", "sublabel": "task lifecycle", "stage": 1, "row": 1, "tag": "active stream" },
+    { "id": "detector", "type": "backend", "label": "YOLOv5 Models", "sublabel": "policy routing", "stage": 2, "row": 0, "tag": "thresholds" },
+    { "id": "spatial", "type": "backend", "label": "Spatial Gate", "sublabel": "GPS + Polygon ROI", "stage": 2, "row": 3, "tag": "trusted region" },
+    { "id": "confirm", "type": "backend", "label": "Event Confirmation", "sublabel": "4 consecutive frames", "stage": 3, "row": 1, "tag": "bounded signal" },
+    { "id": "stream", "type": "backend", "label": "MJPEG Feedback", "sublabel": "GET /video_feed", "stage": 4, "row": 0, "tag": "annotated frames" },
+    { "id": "snapshot", "type": "database", "label": "Snapshot Store", "sublabel": "latest confirmed image", "stage": 4, "row": 2, "tag": "GET snapshot" },
+    { "id": "event", "type": "external", "label": "Event Delivery", "sublabel": "optional business push", "stage": 4, "row": 3, "tag": "async + retry" }
+  ],
+  "flows": [
+    { "id": "video-frames", "from": "video", "to": "orchestrator", "label": "video frames", "classification": "stream input", "variant": "emphasis", "route": "vertical-channel" },
+    { "id": "mission-policy", "from": "request", "to": "orchestrator", "label": "task + policy", "classification": "POST /detect", "variant": "emphasis", "route": "vertical-channel" },
+    { "id": "telemetry-context", "from": "telemetry", "to": "spatial", "label": "location context", "classification": "MQTT telemetry", "variant": "default", "route": "vertical-channel", "labelDx": -60 },
+    { "id": "model-input", "from": "orchestrator", "to": "detector", "label": "active frames", "classification": "inference", "variant": "emphasis", "route": "vertical-channel" },
+    { "id": "raw-detections", "from": "detector", "to": "spatial", "label": "raw detections", "classification": "multi-model", "variant": "default", "route": "vertical-channel" },
+    { "id": "segment-rules", "from": "orchestrator", "to": "spatial", "label": "segment + ROI rules", "classification": "spatial policy", "variant": "default", "route": "bottom-channel" },
+    { "id": "trusted-targets", "from": "spatial", "to": "confirm", "label": "ROI-valid targets", "classification": "center-in-region", "variant": "emphasis", "route": "vertical-channel" },
+    { "id": "confirmed-frames", "from": "confirm", "to": "stream", "label": "annotated frames", "classification": "live feedback", "variant": "default", "route": "vertical-channel" },
+    { "id": "confirmed-snapshot", "from": "confirm", "to": "snapshot", "label": "confirmed event", "classification": "snapshot", "variant": "default", "route": "vertical-channel", "labelDx": -60 },
+    { "id": "business-event", "from": "confirm", "to": "event", "label": "event metadata + image", "classification": "async push", "variant": "dashed", "route": "vertical-channel", "labelDy": 53 }
+  ]
+}
