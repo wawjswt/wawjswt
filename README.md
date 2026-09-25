@@ -16,6 +16,7 @@
 
 <div align="center">
   <a href="#now--smart-detection-api">NOW</a> ·
+  <a href="#-recent-work">RECENT WORK</a> ·
   <a href="#-mission-archives">MISSION ARCHIVES</a> ·
   <a href="#-research-radar">RESEARCH RADAR</a> ·
   <a href="#-github-telemetry">GITHUB TELEMETRY</a>
@@ -107,6 +108,57 @@ The public showcase intentionally describes the architecture only. Connection cr
   ]
 }
 ```
+</details>
+
+## 🛰️ Recent Work
+
+> 最近在做的事情，是把“遥感影像看起来像什么”继续追问到“它能不能变成一个可分析、可对齐、可解释的 3D 场景”。
+> I have been testing where generative 3D reconstruction is genuinely faithful — and where it starts filling in missing geometry with learned priors.
+
+<div align="center">
+  <img src="works/recent-work/recent-work-radar.svg" width="100%" alt="Research flow from multi-resolution satellite imagery through ABot-Earth 3D scene generation, Gaussian analysis, spatial registration and DEM fusion" />
+</div>
+
+### RECENT // ABot-Earth Remote Sensing → 3D Scenes
+
+Two contrasting RGB scene studies gave me a useful contrast: a water–agriculture landscape and a port–industrial logistics landscape. Both suggest the same pattern — **semantic layout and 2D structure survive well; height, side surfaces and occluded geometry remain generative.**
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="works/recent-work/water-input.jpg" width="100%" alt="Dark RGB satellite image of a water and agriculture landscape with reflective ponds" />
+      <p align="center"><sub><b>INPUT / WATER–AGRICULTURE</b><br/>RGB scene · dense ponds and field parcels</sub></p>
+    </td>
+    <td width="50%">
+      <img src="works/recent-work/water-3d-scene.jpg" width="100%" alt="ABot-Earth generated 3D scene preserving ponds, fields, vegetation and the main road" />
+      <p align="center"><sub><b>OUTPUT / SCENE SYNTHESIS</b><br/>water semantics and the main road preserved; details regularized</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="works/recent-work/port-input.jpg" width="100%" alt="High-resolution RGB satellite image of a port, container yard and urban road network" />
+      <p align="center"><sub><b>INPUT / PORT LOGISTICS</b><br/>fine-resolution RGB scene · port, containers and roads</sub></p>
+    </td>
+    <td width="50%">
+      <img src="works/recent-work/port-3d-scene.jpg" width="100%" alt="ABot-Earth generated 3D port scene with water, containers, vehicles and roads" />
+      <p align="center"><sub><b>OUTPUT / HIGH-RESOLUTION DETAIL</b><br/>richer small-target expression; oblique views expose height artifacts</sub></p>
+    </td>
+  </tr>
+</table>
+
+| Study | What held up | What I would not overclaim |
+| :-- | :-- | :-- |
+| **Georeferenced baseline** | A multi-band scene preserved broad urban, waterside and rural structure | It is a visual 3D prior, not a source of measured building height |
+| **Water–agriculture ROI** | Water bodies, the main road, field/pond patterns and scene semantics | Shorelines, vegetation structure and building height are partly regularized or inferred |
+| **Port–industrial ROI** | Harbour geometry, breakwater, main road, roundabout, container yards and dense small-target texture | Fine RGB detail still does not provide reliable building height or side-surface geometry |
+| **Gaussian inspection** | XY layout maps back to the input footprint and supports scene-level comparison | A strong 2D match is not the same as survey-grade 3D reconstruction |
+
+<details>
+<summary><b>Open the measurement and terrain-alignment notes</b></summary>
+
+The Gaussian inspection showed broad XY correspondence between the generated scene and its input image. For terrain grounding, a georeferenced image was used as the horizontal anchor; a terrain raster was aligned to the image grid, invalid areas were masked, and two Z constructions were compared: **terrain drape** and **terrain + relative model Z**. The outputs are useful for visualization and scene interpretation, not for publishing exact coordinates or survey accuracy.
+
+The practical boundary is clear: **terrain data supplies ground context, not a verified DSM**. The draped version helps place a generated scene on the landscape; the relative-height version helps explore visual relief, but its Z should not be read as measured building height.
 </details>
 
 ## 🟢 Live Mission Dashboard
