@@ -24,21 +24,17 @@
 
 ---
 
-## 🛸 Identity Cockpit
+## 🛸 About
 
 > **将视觉智能转化为可落地的现场系统。**
-> I build the path from computer-vision models to observable, controllable and deployable UAV workflows.
 
-| Signal | Current Readout | Signal | Current Readout |
-| :-- | :-- | :-- | :-- |
-| 🎓 BASE | WHU · Wuhan, China | 🟢 MODE | Building in public |
-| 🛰️ DOMAIN | UAV inspection | 🧠 TRACK | Computer vision + spatial AI |
-| ⚙️ BUILD | Model → mission system | 🔭 NEXT | 3D reconstruction + VGGT |
+I'm Wentian Shen at Wuhan University. I connect computer vision, drone inspection and spatial computing to build systems that can be used in the field.
 
-- **Current focus:** drone inspection, real-time detection, telemetry fusion and spatial understanding.
-- **What I build:** systems connecting model inference, video streams, GPS, MQTT and task orchestration.
-- **Beyond code:** photography, games, music and football.
-- **Contact:** [Wentian_Shen@whu.edu.cn](mailto:Wentian_Shen@whu.edu.cn)
+| 🎓 Based at | 🛰️ Building | 🔭 Exploring |
+| :-- | :-- | :-- |
+| WHU · Wuhan, China | UAV vision and mission systems | Remote sensing · 3D scenes · visual geometry |
+
+Outside the lab: photography, games, music and football.
 
 ## NOW // Smart Detection API
 
@@ -49,12 +45,7 @@
 > **Current build:** a local Flask prototype turning aerial video and drone context into a controllable inspection mission.
 > 当前重点不是“跑一次检测”，而是把检测变成可追踪、可确认、可交付的任务闭环。
 
-| Current signal | Readout | Current signal | Readout |
-| :-- | :-- | :-- | :-- |
-| 🟢 RUNTIME | Flask + Waitress | 🛰️ INPUT | RTSP · HTTP · local file |
-| 🧠 INFERENCE | Multi-model YOLOv5 | 📡 CONTEXT | MQTT GPS · altitude · attitude |
-| 🗺️ CONTROL | GPS segments + Polygon ROI | ✅ RELIABILITY | 4-frame confirmation |
-| 📤 DELIVERY | MJPEG · snapshots · event push | 🔧 OPERATIONS | stop · hot reload · bounded queue · stream recovery |
+`Flask + Waitress` · `YOLOv5` · `RTSP / HTTP` · `DJI MQTT` · `GPS segments + Polygon ROI` · `MJPEG + event push`
 
 <details>
 <summary><b>Open the current mission loop</b></summary>
@@ -86,104 +77,82 @@ POST /stop_detect                      # stop task and release stream resources
 POST /reload_models                    # hot reload configured models
 ```
 
-The public showcase intentionally describes the architecture only. Connection credentials, internal service addresses and deployment-specific configuration stay outside this profile README.
+Connection details and deployment configuration are omitted from this public overview.
 </details>
 
 <details>
-<summary><b>Sanitized task request</b></summary>
+<summary><b>Request shape (placeholder values)</b></summary>
 
-```json
-{
-  "rtsp_url": "rtsp://camera-or-drone-stream/live",
-  "drone_sn": "DRONE-SN-PLACEHOLDER",
-  "detect_classes": [0, 1, 3, 4],
-  "conf_thres_drone": 0.52,
-  "conf_thres_ent": 0.75,
-  "segments": [
-    {
-      "start": [START_LAT, START_LON],
-      "stop": [STOP_LAT, STOP_LON],
-      "roi": [0.08, 0.18, 0.92, 0.18, 0.96, 0.88, 0.12, 0.88]
-    }
-  ]
-}
+```text
+POST /detect
+  rtsp_url:       <RTSP / HTTP / local video source>
+  drone_sn:       <drone identifier>
+  detect_classes: <configured target classes>
+  segments:
+    - start:      <GPS waypoint>
+      stop:       <GPS waypoint>
+      roi:        <normalized polygon vertices>
 ```
+</details>
+
+<details>
+<summary><b>Watch the mission dashboard</b></summary>
+
+<div align="center">
+  <img src="works/mission-dashboard.svg" width="92%" alt="Animated mission dashboard showing RTSP, MQTT and GPS data flowing through YOLO inference to confirmed events" />
+</div>
+
+The dashboard visualizes stream input, telemetry context, spatial filtering and confirmed event delivery.
 </details>
 
 ## 🛰️ Recent Work
 
 > 最近在做的事情，是把“遥感影像看起来像什么”继续追问到“它能不能变成一个可分析、可对齐、可解释的 3D 场景”。
-> I have been testing where generative 3D reconstruction is genuinely faithful — and where it starts filling in missing geometry with learned priors.
 
-<div align="center">
-  <img src="works/recent-work/recent-work-radar.svg" width="100%" alt="Research flow from multi-resolution satellite imagery through ABot-Earth 3D scene generation, Gaussian analysis, spatial registration and DEM fusion" />
-</div>
+I am exploring how satellite images can guide navigable 3D scenes, and which parts of those scenes still rely on generation.
 
 ### RECENT // ABot-Earth Remote Sensing → 3D Scenes
 
-Two contrasting RGB scene studies gave me a useful contrast: a water–agriculture landscape and a port–industrial logistics landscape. Both suggest the same pattern — **semantic layout and 2D structure survive well; height, side surfaces and occluded geometry remain generative.**
+Two contrasting scenes — water and agriculture, then a working port — reveal the same pattern: **large-scale layout is recognizable; height and hidden surfaces remain uncertain.**
 
 <table>
   <tr>
-    <td width="50%">
+    <td width="50%" valign="top">
       <img src="works/recent-work/water-input.jpg" width="100%" alt="Dark RGB satellite image of a water and agriculture landscape with reflective ponds" />
       <p align="center"><sub><b>INPUT / WATER–AGRICULTURE</b><br/>RGB scene · dense ponds and field parcels</sub></p>
     </td>
-    <td width="50%">
+    <td width="50%" valign="top">
       <img src="works/recent-work/water-3d-scene.jpg" width="100%" alt="ABot-Earth generated 3D scene preserving ponds, fields, vegetation and the main road" />
       <p align="center"><sub><b>OUTPUT / SCENE SYNTHESIS</b><br/>water semantics and the main road preserved; details regularized</sub></p>
     </td>
   </tr>
   <tr>
-    <td width="50%">
+    <td width="50%" valign="top">
       <img src="works/recent-work/port-input.jpg" width="100%" alt="High-resolution RGB satellite image of a port, container yard and urban road network" />
       <p align="center"><sub><b>INPUT / PORT LOGISTICS</b><br/>fine-resolution RGB scene · port, containers and roads</sub></p>
     </td>
-    <td width="50%">
+    <td width="50%" valign="top">
       <img src="works/recent-work/port-3d-scene.jpg" width="100%" alt="ABot-Earth generated 3D port scene with water, containers, vehicles and roads" />
       <p align="center"><sub><b>OUTPUT / HIGH-RESOLUTION DETAIL</b><br/>richer small-target expression; oblique views expose height artifacts</sub></p>
     </td>
   </tr>
 </table>
 
-| Study | What held up | What I would not overclaim |
-| :-- | :-- | :-- |
-| **Georeferenced baseline** | A multi-band scene preserved broad urban, waterside and rural structure | It is a visual 3D prior, not a source of measured building height |
-| **Water–agriculture ROI** | Water bodies, the main road, field/pond patterns and scene semantics | Shorelines, vegetation structure and building height are partly regularized or inferred |
-| **Port–industrial ROI** | Harbour geometry, breakwater, main road, roundabout, container yards and dense small-target texture | Fine RGB detail still does not provide reliable building height or side-surface geometry |
-| **Gaussian inspection** | XY layout maps back to the input footprint and supports scene-level comparison | A strong 2D match is not the same as survey-grade 3D reconstruction |
+- **What held up:** water bodies, roads, field patterns and the port's main spatial layout.
+- **What improved with finer imagery:** more visible vehicles, containers and other small objects.
+- **What needs care:** building height, side surfaces and occluded areas are inferred; the scenes are for visual exploration rather than surveying.
 
 <details>
-<summary><b>Open the measurement and terrain-alignment notes</b></summary>
+<summary><b>Explore the experiment workflow</b></summary>
+
+<div align="center">
+  <img src="works/recent-work/recent-work-radar.svg" width="94%" alt="Research flow from satellite imagery through ABot-Earth scene generation, Gaussian inspection, spatial alignment and terrain context" />
+</div>
 
 The Gaussian inspection showed broad XY correspondence between the generated scene and its input image. For terrain grounding, a georeferenced image was used as the horizontal anchor; a terrain raster was aligned to the image grid, invalid areas were masked, and two Z constructions were compared: **terrain drape** and **terrain + relative model Z**. The outputs are useful for visualization and scene interpretation, not for publishing exact coordinates or survey accuracy.
 
 The practical boundary is clear: **terrain data supplies ground context, not a verified DSM**. The draped version helps place a generated scene on the landscape; the relative-height version helps explore visual relief, but its Z should not be read as measured building height.
 </details>
-
-## 🟢 Live Mission Dashboard
-
-<div align="center">
-  <img src="works/mission-dashboard.svg" width="100%" alt="Animated mission dashboard showing RTSP, MQTT and GPS data flowing through YOLO inference to confirmed events" />
-</div>
-
-| System | Status | Operational role |
-| :-- | :--: | :-- |
-| Video inference | 🟢 ONLINE | RTSP / HTTP / local stream processing with bounded reconnect |
-| UAV telemetry | 🟢 LINKED | MQTT GPS, attitude and altitude context |
-| Spatial control | 🟣 ACTIVE | GPS segments and polygon ROI |
-| Event reliability | 🟡 VERIFYING | Consecutive-frame confirmation |
-| Model deployment | 🟢 BUILDING | Serving, hot reload, stream recovery and field iteration |
-
-## 🧭 Operational Toolkit
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,opencv,flask,fastapi,docker,linux,bash,git,github,cpp,js,html,css,react,vue,anaconda,vscode,figma&perline=10&theme=dark" alt="Technology stack" />
-</div>
-
-| Vision & AI | Mission & Backend | Spatial Computing | Engineering |
-| :-- | :-- | :-- | :-- |
-| YOLOv5 · PyTorch · OpenCV | Flask · MQTT · RTSP · MJPEG | Remote Sensing · Photogrammetry · 3DGS | Docker · Git · Linux · C++ |
 
 ---
 
@@ -191,24 +160,18 @@ The practical boundary is clear: **terrain data supplies ground context, not a v
 
 ### MISSION 01 // Smart Detection API
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0B1220,45:123C63,100:3B1D72&height=108&text=SMART%20DETECTION%20API&fontSize=32&fontColor=E6F7FF&desc=VISION%20%C2%B7%20TELEMETRY%20%C2%B7%20MISSION%20ORCHESTRATION&descAlignY=73&descSize=15" width="100%" alt="Smart Detection API title" />
-  <br/><br/>
-  <img src="works/smart-detection-api.svg" width="96%" alt="Smart Detection API architecture" />
-</div>
-
 > **An engineering prototype for UAV inspection workflows.**
 > 它将视频流、飞行轨迹、电子围栏、模型策略与实时反馈组织成可观测的任务闭环。
 
-| Mission field | Readout |
-| :-- | :-- |
-| STATUS | 🟢 Active development |
-| TYPE | UAV inspection / surveillance |
-| CORE LOOP | Video → Inference → Telemetry → Decision |
-| ROLE | Computer vision · backend · system orchestration |
-| STACK | Flask · YOLOv5 / PyTorch · OpenCV · MQTT · Waitress |
+- **Role:** Computer vision · backend · system orchestration
+- **Stack:** Flask · YOLOv5 / PyTorch · OpenCV · MQTT · Waitress
 
-#### Interface highlights
+<details>
+<summary><b>Explore the architecture and engineering notes</b></summary>
+
+<div align="center">
+  <img src="works/smart-detection-api.svg" width="92%" alt="Smart Detection API architecture linking video, telemetry, inference and event delivery" />
+</div>
 
 1. **Multi-segment mission:** each `segment` has independent start, stop and ROI rules; GPS position controls activation and switching.
 2. **Two-layer spatial constraint:** GPS segments decide *when* to detect; polygon ROI decides *where* detections are trusted.
@@ -216,81 +179,65 @@ The practical boundary is clear: **terrain data supplies ground context, not a v
 4. **Policy-aware inference:** target categories can route to different YOLO models with independent confidence thresholds.
 5. **Field operations:** consecutive-frame confirmation, MJPEG output, snapshots, stop control and model hot reload.
 6. **Stream resilience:** failed video connections use bounded exponential-backoff retries; terminal failures release resources and close the affected task cleanly.
-
-#### Mission flow
-
-```text
-Create task → enter GPS segment → activate inference → apply Polygon ROI
-        → confirm across frames → save snapshot / deliver event
-        → reach stop point → switch to next flight leg
-```
-
-#### API surface
-
-```http
-POST /detect                           # create detection task
-GET  /video_feed/<task_id>             # MJPEG result stream
-GET  /api/telemetry?sn=<drone_sn>      # latest MQTT telemetry
-GET  /get_latest_snapshot?task_id=<id> # latest confirmed snapshot
-POST /stop_detect                      # stop task
-POST /reload_models                    # hot reload configured models
-```
-
-<details><summary><b>任务请求示例：双航段 + 双电子围栏（脱敏）</b></summary>
-
-```json
-{
-  "rtsp_url": "rtsp://camera-or-drone-stream/live",
-  "drone_sn": "DRONE-SN-PLACEHOLDER",
-  "detect_classes": [0, 1, 3, 4],
-  "conf_thres_drone": 0.52,
-  "conf_thres_ent": 0.75,
-  "segments": [
-    {"start": [START_LAT_1, START_LON_1], "stop": [STOP_LAT_1, STOP_LON_1], "roi": [0.08, 0.18, 0.92, 0.18, 0.96, 0.88, 0.12, 0.88]},
-    {"start": [START_LAT_2, START_LON_2], "stop": [STOP_LAT_2, STOP_LON_2], "roi": [0.18, 0.20, 0.82, 0.82]}
-  ]
-}
-```
 </details>
 
 ### MISSION 02 // YOLOv5 Drone
 
+Vehicle and fire detection experiments from an aerial viewpoint. [Explore the project →](https://github.com/wawjswt/Yolov5-Drone)
+
 <div align="center">
-  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/yolo-car.jpg" width="48%" alt="Vehicle detection from an aerial view" /></a>
-  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/yolo-fire.jpg" width="48%" alt="Fire detection demo" /></a><br/><br/>
-  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/drone.gif" width="78%" alt="Animated drone target detection demonstration" /></a>
+  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/yolo-car.jpg" width="47%" alt="Vehicle detection from an aerial view" /></a>
+  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/yolo-fire.jpg" width="47%" alt="Fire detection demo" /></a>
 </div>
 
-| Mission field | Readout |
-| :-- | :-- |
-| STATUS | 🟣 Exploration / research demo |
-| OBJECTIVE | Aerial target detection for vehicles, fire and monitoring scenes |
-| STACK | PyTorch · YOLOv5 · OpenCV |
-| SOURCE | [Open repository →](https://github.com/wawjswt/Yolov5-Drone) |
+<details>
+<summary><b>Watch the aerial detection demo</b></summary>
+
+<div align="center">
+  <img src="works/drone.gif" width="76%" alt="Animated drone target detection demonstration" />
+</div>
+</details>
 
 ### MISSION 03 // Gaussian Splatting
 
-<div align="center"><img src="works/dog.png" width="48%" alt="Gaussian Splatting dog scene" /><img src="works/witcher.png" width="48%" alt="Gaussian Splatting Witcher scene" /><br/><br/><img src="works/demo.gif" width="78%" alt="Animated novel-view synthesis" /></div>
+Exploring scene reconstruction and novel-view synthesis with [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
 
-| Mission field | Readout |
-| :-- | :-- |
-| STATUS | 🟡 Spatial research |
-| OBJECTIVE | 3D reconstruction, novel-view synthesis and visual expression |
-| REFERENCE | [Gaussian Splatting →](https://github.com/graphdeco-inria/gaussian-splatting) |
+<div align="center">
+  <img src="works/dog.png" width="47%" alt="Gaussian Splatting dog scene" />
+  <img src="works/witcher.png" width="47%" alt="Gaussian Splatting Witcher scene" />
+</div>
+
+<details>
+<summary><b>Watch the novel-view demo</b></summary>
+
+<div align="center">
+  <img src="works/demo.gif" width="76%" alt="Animated novel-view synthesis" />
+</div>
+</details>
 
 ### MISSION 04 // VGGT
 
-<div align="center"><img src="works/vggt.png" width="72%" alt="VGGT visual geometry demonstration" /></div>
+Learning visual geometry and scene understanding through [VGGT](https://github.com/facebookresearch/vggt).
 
-| Mission field | Readout |
-| :-- | :-- |
-| STATUS | 🟣 Learning radar |
-| OBJECTIVE | Visual geometry, scene understanding and interactive spatial expression |
-| REFERENCE | [Explore VGGT →](https://github.com/facebookresearch/vggt) |
+<div align="center">
+  <img src="works/vggt.png" width="64%" alt="VGGT visual geometry demonstration" />
+</div>
+
+## 🧭 Operational Toolkit
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=python,pytorch,opencv,flask,docker,linux,git,github&perline=8&theme=dark" alt="Python, PyTorch, OpenCV, Flask, Docker, Linux, Git and GitHub" />
+</div>
+
+- **Vision & AI:** YOLOv5 · PyTorch · OpenCV
+- **Mission systems:** Flask · MQTT · RTSP · MJPEG
+- **Spatial computing:** Remote sensing · Photogrammetry · 3DGS
 
 ## 🔭 Research Radar
 
-<div align="center"><img src="works/research-radar.svg" width="100%" alt="Animated research radar" /></div>
+<div align="center">
+  <img src="works/research-radar.svg" width="92%" alt="Animated radar of aerial vision, spatial AI, 3D geometry and remote sensing research directions" />
+</div>
 
 - **Aerial AI:** route-aware detection, UAV inspection and video-stream intelligence.
 - **Spatial Computing:** visual geometry, 3D reconstruction, novel-view synthesis and scene understanding.
@@ -299,20 +246,32 @@ POST /reload_models                    # hot reload configured models
 
 ## 🗺️ Flight Log
 
-<div align="center"><img src="works/mission-timeline.svg" width="100%" alt="Animated research and project timeline" /></div>
-
 > I am interested in the boundary where a vision algorithm becomes a dependable system for a real mission.
+
+<details>
+<summary><b>View the research timeline</b></summary>
+
+<div align="center">
+  <img src="works/mission-timeline.svg" width="92%" alt="Animated timeline of aerial detection, Gaussian Splatting, VGGT and mission systems" />
+</div>
+</details>
 
 ## 📡 GitHub Telemetry
 
 <div align="center">
   <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" height="170" alt="GitHub statistics" />
   <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" height="170" alt="Most used languages" />
-  <br/><br/>
+</div>
+
+<details>
+<summary><b>View activity and contribution streak</b></summary>
+
+<div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=wawjswt&theme=tokyo-night&hide_border=true&area=true&area_color=22D3EE&line=22D3EE&point=8B5CF6" width="96%" alt="GitHub activity graph" />
   <br/><br/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=tokyonight&hide_border=true&background=00000000&ring=22D3EE&fire=8B5CF6&currStreakLabel=E6F7FF" alt="GitHub contribution streak" />
 </div>
+</details>
 
 ## 🐍 Contribution Flight Path
 
