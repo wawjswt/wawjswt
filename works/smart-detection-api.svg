@@ -3,14 +3,14 @@
   <desc id="desc">Video sources and drone telemetry flow through an orchestration layer to live operations and event delivery.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="0.55" stop-color="#13233f"/><stop offset="1" stop-color="#1c1244"/></linearGradient>
-    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#71e8c4"/><stop offset="1" stop-color="#62b9ab"/></linearGradient>
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <marker id="arrow" markerWidth="10" markerHeight="15" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7dd3fc"/></marker>
   </defs>
   <rect width="1200" height="510" rx="28" fill="url(#bg)"/>
   <circle cx="1070" cy="80" r="180" fill="#7c3aed" opacity=".15"/><circle cx="92" cy="444" r="175" fill="#06b6d4" opacity=".12"/>
   <text x="60" y="68" fill="#f8fafc" font-family="Arial, sans-serif" font-size="30" font-weight="700">SMART DETECTION API</text>
-  <text x="60" y="98" fill="#a5b4fc" font-family="Arial, sans-serif" font-size="16" letter-spacing="1.2">VISION · TELEMETRY · MISSION ORCHESTRATION</text>
+  <text x="60" y="98" fill="#a3d8ce" font-family="Arial, sans-serif" font-size="16" letter-spacing="1.2">VISION · TELEMETRY · MISSION ORCHESTRATION</text>
 
   <g font-family="Arial, sans-serif">
     <rect x="58" y="164" width="238" height="235" rx="20" fill="#101b31" stroke="#334155"/>
@@ -21,10 +21,10 @@
     <path d="M305 280 H410" stroke="#7dd3fc" stroke-width="4" marker-end="url(#arrow)"/>
     <rect x="424" y="137" width="380" height="290" rx="26" fill="#101b31" stroke="url(#core)" stroke-width="2" filter="url(#glow)"/>
     <text x="455" y="183" fill="#f8fafc" font-size="22" font-weight="700">DETECTION ORCHESTRATOR</text>
-    <text x="455" y="211" fill="#a5b4fc" font-size="14">Flask + YOLO + OpenCV</text>
+    <text x="455" y="211" fill="#a3d8ce" font-size="14">Flask + YOLO + OpenCV</text>
     <line x1="455" y1="232" x2="742" y2="232" stroke="#334155"/>
-    <circle cx="470" cy="266" r="6" fill="#22d3ee"/><text x="489" y="271" fill="#e2e8f0" font-size="16">Multi-segment mission control</text>
-    <circle cx="470" cy="303" r="6" fill="#a78bfa"/><text x="489" y="308" fill="#e2e8f0" font-size="16">Polygon ROI / visual geofence</text>
+    <circle cx="470" cy="266" r="6" fill="#71e8c4"/><text x="489" y="271" fill="#e2e8f0" font-size="16">Multi-segment mission control</text>
+    <circle cx="470" cy="303" r="6" fill="#a3d8ce"/><text x="489" y="308" fill="#e2e8f0" font-size="16">Polygon ROI / visual geofence</text>
     <circle cx="470" cy="340" r="6" fill="#34d399"/><text x="489" y="345" fill="#e2e8f0" font-size="16">Frame confirmation &amp; per-model thresholds</text>
     <circle cx="470" cy="377" r="6" fill="#fbbf24"/><text x="489" y="382" fill="#e2e8f0" font-size="16">Task lifecycle &amp; model hot reload</text>
 

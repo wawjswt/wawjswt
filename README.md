@@ -1,54 +1,68 @@
-<!-- PROFILE README · Aerial Mission Control -->
+<!-- PROFILE README · Aerial field notes -->
 
 <div align="center">
-  <img src="works/hero-mission.svg" width="100%" alt="Aerial Mission Control header for Wentian Shen" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="works/hero-mission-mobile.svg" />
+    <img src="works/hero-mission.svg" width="100%" alt="Wentian Shen — Aerial vision and spatial intelligence, Wuhan University" />
+  </picture>
 </div>
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=21&pause=1200&color=22D3EE&center=true&vCenter=true&width=760&lines=Turning+visual+intelligence+into+field-ready+systems.;Computer+Vision+%7C+UAV+Inspection+%7C+Spatial+AI+%7C+Deployment" alt="Typing introduction" />
-</div>
+<p align="center">
+  <a href="#current-build">Current build</a> &nbsp; / &nbsp;
+  <a href="#recent-work">Recent work</a> &nbsp; / &nbsp;
+  <a href="#selected-projects">Selected projects</a> &nbsp; / &nbsp;
+  <a href="#research">Research</a> &nbsp; / &nbsp;
+  <a href="mailto:Wentian_Shen@whu.edu.cn">Get in touch ↗</a>
+</p>
 
-<div align="center">
-  <a href="https://github.com/wawjswt"><img src="https://img.shields.io/badge/GitHub-wawjswt-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub wawjswt" /></a>
-  <a href="mailto:Wentian_Shen@whu.edu.cn"><img src="https://img.shields.io/badge/CONTACT-EMAIL-06B6D4?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Email Wentian Shen" /></a>
-  <img src="https://komarev.com/ghpvc/?username=wawjswt&label=MISSION+VISITS&style=for-the-badge&color=0EA5E9" alt="Profile views" />
-</div>
+<p align="center">
+  <a href="https://github.com/wawjswt"><img src="https://img.shields.io/badge/GitHub-wawjswt-17283B?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub wawjswt" /></a>
+  <a href="mailto:Wentian_Shen@whu.edu.cn"><img src="https://img.shields.io/badge/Email-Let%27s_talk-17283B?style=flat-square&amp;logo=minutemailer&amp;logoColor=71E8C4" alt="Email Wentian Shen" /></a>
+  <img src="https://komarev.com/ghpvc/?username=wawjswt&amp;label=Profile+views&amp;style=flat-square&amp;color=397E73" alt="Profile views" />
+</p>
 
-<div align="center">
-  <a href="#now--smart-detection-api">NOW</a> ·
-  <a href="#-recent-work">RECENT WORK</a> ·
-  <a href="#-mission-archives">MISSION ARCHIVES</a> ·
-  <a href="#-research-radar">RESEARCH RADAR</a> ·
-  <a href="#-github-telemetry">GITHUB TELEMETRY</a>
-</div>
+<br/>
 
----
+### Hi, I’m Wentian Shen
 
-## 🛸 About
+**将视觉智能转化为可落地的现场系统。**
 
-> **将视觉智能转化为可落地的现场系统。**
+I'm at **Wuhan University**, connecting computer vision, drone inspection and spatial computing to build systems that can be used in the field. Outside the lab: photography, games, music and football.
 
-I'm Wentian Shen at Wuhan University. I connect computer vision, drone inspection and spatial computing to build systems that can be used in the field.
+<picture>
+  <source media="(max-width: 600px)" srcset="works/profile-focus-mobile.svg" />
+  <img src="works/profile-focus.svg" width="100%" alt="Current focus: UAV mission systems, imagery to 3D scenes, and vision engineering with Python, PyTorch, OpenCV, Flask, MQTT and Linux" />
+</picture>
 
-| 🎓 Based at | 🛰️ Building | 🔭 Exploring |
-| :-- | :-- | :-- |
-| WHU · Wuhan, China | UAV vision and mission systems | Remote sensing · 3D scenes · visual geometry |
+<br/>
 
-Outside the lab: photography, games, music and football.
+<a id="current-build"></a>
 
-## NOW // Smart Detection API
+## Current build
 
-<div align="center">
-  <img src="works/now-smart-detection-api.svg" width="100%" alt="Smart Detection API data-flow diagram from video and DJI telemetry through Flask orchestration, multi-model inference, spatial gating, event confirmation and delivery" />
-</div>
+<sub>UAV INSPECTION &nbsp; / &nbsp; SYSTEM ENGINEERING</sub>
+
+### Smart Detection API
+
+<picture>
+  <source media="(max-width: 600px)" srcset="works/mission-feature-mobile.svg" />
+  <img src="works/mission-feature.svg" width="100%" alt="Smart Detection API: collect video and telemetry, understand spatial context, confirm detections and deliver events" />
+</picture>
+
 
 > **Current build:** a local Flask prototype turning aerial video and drone context into a controllable inspection mission.
 > 当前重点不是“跑一次检测”，而是把检测变成可追踪、可确认、可交付的任务闭环。
 
 `Flask + Waitress` · `YOLOv5` · `RTSP / HTTP` · `DJI MQTT` · `GPS segments + Polygon ROI` · `MJPEG + event push`
 
+**Role:** Computer vision · backend · system orchestration
+
 <details>
 <summary><b>Open the current mission loop</b></summary>
+
+<div align="center">
+  <img src="works/now-smart-detection-api.svg" width="100%" alt="Smart Detection API data-flow diagram from video and DJI telemetry through Flask orchestration, multi-model inference, spatial gating, event confirmation and delivery" />
+</div>
 
 ```text
 POST /detect
@@ -105,38 +119,43 @@ POST /detect
 The dashboard visualizes stream input, telemetry context, spatial filtering and confirmed event delivery.
 </details>
 
-## 🛰️ Recent Work
+<details>
+<summary><b>Explore the architecture and engineering notes</b></summary>
+
+<div align="center">
+  <img src="works/smart-detection-api.svg" width="92%" alt="Smart Detection API architecture linking video, telemetry, inference and event delivery" />
+</div>
+
+1. **Multi-segment mission:** each `segment` has independent start, stop and ROI rules; GPS position controls activation and switching.
+2. **Two-layer spatial constraint:** GPS segments decide *when* to detect; polygon ROI decides *where* detections are trusted.
+3. **Video + telemetry fusion:** RTSP / HTTP / local streams are linked with the latest MQTT GPS, attitude and altitude data.
+4. **Policy-aware inference:** target categories can route to different YOLO models with independent confidence thresholds.
+5. **Field operations:** consecutive-frame confirmation, MJPEG output, snapshots, stop control and model hot reload.
+6. **Stream resilience:** failed video connections use bounded exponential-backoff retries; terminal failures release resources and close the affected task cleanly.
+</details>
+
+<br/>
+
+<a id="recent-work"></a>
+
+## Recent work
+
+<sub>REMOTE SENSING &nbsp; / &nbsp; GENERATIVE 3D</sub>
 
 > 最近在做的事情，是把“遥感影像看起来像什么”继续追问到“它能不能变成一个可分析、可对齐、可解释的 3D 场景”。
 
 I am exploring how satellite images can guide navigable 3D scenes, and which parts of those scenes still rely on generation.
 
-### RECENT // ABot-Earth Remote Sensing → 3D Scenes
+### From satellite imagery to 3D scenes
+
+**ABot-Earth experiments**
 
 Two contrasting scenes — water and agriculture, then a working port — reveal the same pattern: **large-scale layout is recognizable; height and hidden surfaces remain uncertain.**
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="works/recent-work/water-input.jpg" width="100%" alt="Dark RGB satellite image of a water and agriculture landscape with reflective ponds" />
-      <p align="center"><sub><b>INPUT / WATER–AGRICULTURE</b><br/>RGB scene · dense ponds and field parcels</sub></p>
-    </td>
-    <td width="50%" valign="top">
-      <img src="works/recent-work/water-3d-scene.jpg" width="100%" alt="ABot-Earth generated 3D scene preserving ponds, fields, vegetation and the main road" />
-      <p align="center"><sub><b>OUTPUT / SCENE SYNTHESIS</b><br/>water semantics and the main road preserved; details regularized</sub></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <img src="works/recent-work/port-input.jpg" width="100%" alt="High-resolution RGB satellite image of a port, container yard and urban road network" />
-      <p align="center"><sub><b>INPUT / PORT LOGISTICS</b><br/>fine-resolution RGB scene · port, containers and roads</sub></p>
-    </td>
-    <td width="50%" valign="top">
-      <img src="works/recent-work/port-3d-scene.jpg" width="100%" alt="ABot-Earth generated 3D port scene with water, containers, vehicles and roads" />
-      <p align="center"><sub><b>OUTPUT / HIGH-RESOLUTION DETAIL</b><br/>richer small-target expression; oblique views expose height artifacts</sub></p>
-    </td>
-  </tr>
-</table>
+<img src="works/gallery/water-scenes.svg" width="100%" alt="Water and agriculture study: original RGB satellite input beside the generated ABot-Earth 3D scene; original images shown without cropping" />
+
+<img src="works/gallery/port-scenes.svg" width="100%" alt="Port logistics study: original satellite input beside the generated 3D port scene; original images shown without cropping" />
+
 
 - **What held up:** water bodies, roads, field patterns and the port's main spatial layout.
 - **What improved with finer imagery:** more visible vehicles, containers and other small objects.
@@ -156,39 +175,17 @@ The practical boundary is clear: **terrain data supplies ground context, not a v
 
 ---
 
-## 🚀 Mission Archives
+<a id="selected-projects"></a>
 
-### MISSION 01 // Smart Detection API
+## Selected projects
 
-> **An engineering prototype for UAV inspection workflows.**
-> 它将视频流、飞行轨迹、电子围栏、模型策略与实时反馈组织成可观测的任务闭环。
+<sub>A COLLECTION OF BUILDS, EXPERIMENTS &amp; VISUAL EXPLORATIONS</sub>
 
-- **Role:** Computer vision · backend · system orchestration
-- **Stack:** Flask · YOLOv5 / PyTorch · OpenCV · MQTT · Waitress
-
-<details>
-<summary><b>Explore the architecture and engineering notes</b></summary>
-
-<div align="center">
-  <img src="works/smart-detection-api.svg" width="92%" alt="Smart Detection API architecture linking video, telemetry, inference and event delivery" />
-</div>
-
-1. **Multi-segment mission:** each `segment` has independent start, stop and ROI rules; GPS position controls activation and switching.
-2. **Two-layer spatial constraint:** GPS segments decide *when* to detect; polygon ROI decides *where* detections are trusted.
-3. **Video + telemetry fusion:** RTSP / HTTP / local streams are linked with the latest MQTT GPS, attitude and altitude data.
-4. **Policy-aware inference:** target categories can route to different YOLO models with independent confidence thresholds.
-5. **Field operations:** consecutive-frame confirmation, MJPEG output, snapshots, stop control and model hot reload.
-6. **Stream resilience:** failed video connections use bounded exponential-backoff retries; terminal failures release resources and close the affected task cleanly.
-</details>
-
-### MISSION 02 // YOLOv5 Drone
+### YOLOv5 Drone · Aerial perception
 
 Vehicle and fire detection experiments from an aerial viewpoint. [Explore the project →](https://github.com/wawjswt/Yolov5-Drone)
 
-<div align="center">
-  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/yolo-car.jpg" width="47%" alt="Vehicle detection from an aerial view" /></a>
-  <a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/yolo-fire.jpg" width="47%" alt="Fire detection demo" /></a>
-</div>
+<a href="https://github.com/wawjswt/Yolov5-Drone"><img src="works/gallery/aerial-detection.svg" width="100%" alt="YOLOv5 Drone experiment gallery: vehicle and fire detections from aerial views" /></a>
 
 <details>
 <summary><b>Watch the aerial detection demo</b></summary>
@@ -198,14 +195,11 @@ Vehicle and fire detection experiments from an aerial viewpoint. [Explore the pr
 </div>
 </details>
 
-### MISSION 03 // Gaussian Splatting
+### Gaussian Splatting · Novel views
 
 Exploring scene reconstruction and novel-view synthesis with [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
 
-<div align="center">
-  <img src="works/dog.png" width="47%" alt="Gaussian Splatting dog scene" />
-  <img src="works/witcher.png" width="47%" alt="Gaussian Splatting Witcher scene" />
-</div>
+<img src="works/gallery/gaussian-scenes.svg" width="100%" alt="Gaussian Splatting experiment gallery: dog and Witcher scenes, displayed in full" />
 
 <details>
 <summary><b>Watch the novel-view demo</b></summary>
@@ -215,28 +209,35 @@ Exploring scene reconstruction and novel-view synthesis with [Gaussian Splatting
 </div>
 </details>
 
-### MISSION 04 // VGGT
+### VGGT · Visual geometry
 
 Learning visual geometry and scene understanding through [VGGT](https://github.com/facebookresearch/vggt).
 
-<div align="center">
-  <img src="works/vggt.png" width="64%" alt="VGGT visual geometry demonstration" />
-</div>
+<a href="https://github.com/facebookresearch/vggt"><img src="works/gallery/visual-geometry.svg" width="100%" alt="VGGT visual geometry experiment, shown in a framed gallery" /></a>
 
-## 🧭 Operational Toolkit
+<br/>
+
+## Toolkit
+
+<sub>TOOLS BEHIND THE EXPERIMENTS</sub>
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=python,pytorch,opencv,flask,docker,linux,git,github&perline=8&theme=dark" alt="Python, PyTorch, OpenCV, Flask, Docker, Linux, Git and GitHub" />
 </div>
 
-- **Vision & AI:** YOLOv5 · PyTorch · OpenCV
-- **Mission systems:** Flask · MQTT · RTSP · MJPEG
-- **Spatial computing:** Remote sensing · Photogrammetry · 3DGS
+| Vision & AI | Mission systems | Spatial computing |
+| :--- | :--- | :--- |
+| YOLOv5 · PyTorch · OpenCV | Flask · MQTT · RTSP · MJPEG | Remote sensing · Photogrammetry · 3DGS |
 
-## 🔭 Research Radar
+<a id="research"></a>
+
+## Research directions
 
 <div align="center">
-  <img src="works/research-radar.svg" width="92%" alt="Animated radar of aerial vision, spatial AI, 3D geometry and remote sensing research directions" />
+  <picture>
+  <source media="(max-width: 600px)" srcset="works/research-radar-mobile.svg" />
+  <img src="works/research-radar.svg" width="100%" alt="Research atlas connecting aerial AI, spatial computing, remote sensing and AI engineering; topics rather than numerical scores" />
+</picture>
 </div>
 
 - **Aerial AI:** route-aware detection, UAV inspection and video-stream intelligence.
@@ -244,7 +245,7 @@ Learning visual geometry and scene understanding through [VGGT](https://github.c
 - **Remote Sensing:** photogrammetry, geospatial perception and image interpretation.
 - **AI Engineering:** model serving, streaming, observability and controllable orchestration.
 
-## 🗺️ Flight Log
+## Field notes
 
 > I am interested in the boundary where a vision algorithm becomes a dependable system for a real mission.
 
@@ -256,33 +257,36 @@ Learning visual geometry and scene understanding through [VGGT](https://github.c
 </div>
 </details>
 
-## 📡 GitHub Telemetry
+## On GitHub
 
 <div align="center">
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=wawjswt&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" height="170" alt="GitHub statistics" />
-  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=tokyonight&hide_border=true" height="170" alt="Most used languages" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api?username=wawjswt&show_icons=true&theme=transparent&amp;hide_border=true&amp;title_color=71e8c4&amp;icon_color=71e8c4&amp;text_color=9aafbf&amp;bg_color=101d2d&rank_icon=github" height="170" alt="GitHub statistics" />
+  <img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=wawjswt&layout=compact&theme=transparent&amp;hide_border=true&amp;title_color=71e8c4&amp;icon_color=71e8c4&amp;text_color=9aafbf&amp;bg_color=101d2d" height="170" alt="Most used languages" />
 </div>
 
 <details>
 <summary><b>View activity and contribution streak</b></summary>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=wawjswt&theme=tokyo-night&hide_border=true&area=true&area_color=22D3EE&line=22D3EE&point=8B5CF6" width="96%" alt="GitHub activity graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=wawjswt&bg_color=101d2d&amp;color=9aafbf&amp;hide_border=true&amp;area=true&amp;area_color=71e8c4&amp;line=71e8c4&amp;point=e6b975" width="96%" alt="GitHub activity graph" />
   <br/><br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&theme=tokyonight&hide_border=true&background=00000000&ring=22D3EE&fire=8B5CF6&currStreakLabel=E6F7FF" alt="GitHub contribution streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=wawjswt&amp;theme=transparent&amp;hide_border=true&amp;background=101D2D&amp;ring=71E8C4&amp;fire=E6B975&amp;currStreakLabel=71E8C4&amp;sideLabels=9AAFBF&amp;dates=9AAFBF" alt="GitHub contribution streak" />
 </div>
 </details>
 
-## 🐍 Contribution Flight Path
+<details>
+<summary><b>Contribution flight path</b></summary>
+
 
 <div align="center"><img src="https://raw.githubusercontent.com/wawjswt/wawjswt/output/github-contribution-grid-snake.svg" alt="Animated contribution snake" /></div>
 
----
+</details>
 
-<div align="center">
-  <h3>OPEN FREQUENCY</h3>
-  <p>Open to exchanging ideas about computer vision, UAV inspection, remote sensing and practical AI systems.</p>
-  <a href="mailto:Wentian_Shen@whu.edu.cn">📮 Contact mission control</a>
-  <br/><br/>
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:07142B,45:123C63,100:7C3AED&height=110&section=footer" alt="Footer wave" />
-</div>
+<br/>
+
+<a href="mailto:Wentian_Shen@whu.edu.cn"><picture>
+  <source media="(max-width: 600px)" srcset="works/profile-contact-mobile.svg" />
+  <img src="works/profile-contact.svg" width="100%" alt="Let's exchange ideas about computer vision, UAV inspection, remote sensing and practical AI. Email Wentian Shen." />
+</picture></a>
+
+<p align="center"><a href="mailto:Wentian_Shen@whu.edu.cn">Wentian_Shen@whu.edu.cn</a> &nbsp; · &nbsp; <a href="https://github.com/wawjswt">GitHub ↗</a></p>
